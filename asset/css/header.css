@@ -1,0 +1,57 @@
+﻿header{
+	background-color:#324359;
+	border-bottom:1px solid #F2F2F0;
+	cursor:default;
+	display:none;
+	position:fixed;
+	text-align:center;
+	height:2.6em;
+	width:70%;
+}
+header nav{
+	box-sizing:border-box;
+	color:#F2F2F0;
+	cursor:pointer;
+	display:inline-block;
+	font:1.2em Verdana;
+	margin:0 -2.5px;
+	padding:0.5em 0.8em;
+	width:20%;
+}
+header nav:hover{
+	background-color:#F2F2F0;
+	color:#324359;
+}
+header .selected{
+	background-color:#F2F2F0;
+	color:#162238;
+	cursor:default;
+}
+/*Small viewport*/
+@media screen and (max-width:773px){
+	header{
+		height:auto;
+		width:100%;
+	}
+	header #Menu0{
+		box-sizing:border-box;
+		width:100%;
+	}
+	header #Menu1,#Menu2,#Menu3,#Menu4{
+		display:none;
+	}
+}
+@media screen and (max-device-width:773px){
+	header{
+		height:auto;
+		width:100%;
+	}
+	header #Menu0{
+		box-sizing:border-box;
+		font-size:3em;
+		width:100%;
+	}
+	header #Menu1,#Menu2,#Menu3,#Menu4{
+		display:none;
+	}
+}

@@ -1,0 +1,133 @@
+footer{
+	background-color:#162238;
+	box-sizing:border-box;
+	margin:auto;
+	width:100%;
+}
+footer button{
+	padding:0.3em;
+}
+footer button:hover{
+	background-color:#D9D9D9;
+	color:#162238;
+}
+footer section{
+	box-sizing:border-box;
+	cursor:default;
+	vertical-align:top;
+	width:49%;
+}
+footer section:first-child{
+	display:inline-block;
+	padding:3em;
+}
+footer section:nth-child(2){
+	display:inline-block;
+	padding:3em 3em 3em 0;
+}
+footer section:last-child{
+	background-color:#324359;
+	display:block;
+	padding:3em;
+	width:100%;
+}
+footer #logo{
+	display:block;
+	margin:1.5em auto;
+	height:3.7em;
+}
+footer .extern_logo{
+	margin:1em;
+	width:6%;
+}
+footer a:first-of-type .extern_logo{
+	margin-left:0;
+}
+footer a:last-of-type .extern_logo{
+	margin-right:0;
+}
+/*Small viewport*/
+@media screen and (max-width:773px){
+	footer{
+		width:100%;
+	}
+	footer input{
+		width:100%;
+	}
+	footer section{
+		display:block;
+		width:100%;
+	}
+	footer section:first-child{
+		padding:3em;
+	}
+	footer section:nth-child(2){
+		background-color:#324359;
+		padding:3em;
+	}
+	footer section:nth-child(2) button{
+		background-color:#162238;
+	}
+	footer section:nth-child(2) button:hover{
+		background-color:#D9D9D9;
+		color:#162238;
+	}
+	footer section:nth-child(2) input{
+		border-color:#162238;
+	}
+	footer section:last-child{
+		background-color:#162238;
+		padding:3em;
+	}
+	footer textarea{
+		width:100%;
+	}
+	footer #logo{
+		display:none;
+	}
+	footer .extern_logo{
+		margin:2em;
+		width:10%;
+	}
+}
+/*Small device*/
+@media screen and (max-device-width:773px){
+	footer{
+		width:100%;
+	}
+	footer input{
+		width:100%;
+	}
+	footer section{
+		display:block;
+		padding:3em;
+		width:100%;
+	}
+	footer section:first-child{
+		padding:3em;
+	}
+	footer section:nth-child(2){
+		background-color:#324359;
+		padding:3em;
+	}
+	footer section:nth-child(2) button{
+		background-color:#162238;
+	}
+	footer section:nth-child(2) input{
+		border-color:#162238;
+	}
+	footer section:last-child{
+		background-color:#162238;
+		padding:3em;
+	}
+	footer textarea{
+		width:100%;
+	}
+	footer #logo{
+		display:none;
+	}
+	footer .extern_logo{
+		margin:2em;
+		width:10%;
+	}
+}
