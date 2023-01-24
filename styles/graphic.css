@@ -1,0 +1,74 @@
+@import "style.css";
+
+body {
+  	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#functions {
+	padding-left: calc(var(--width-small-button) / 2);
+	padding-right: calc(var(--width-small-button) / 2);
+	padding-top: calc(var(--width-small-button) / 4);
+	padding-bottom: calc(var(--width-small-button) / 4);
+}
+
+#f-table td #remove {
+	height: var(--width-small-button);
+	min-width: var(--width-small-button);
+	padding: calc(var(--width-small-button) / 20);
+}
+
+#f-table td #input-formula {
+	padding-left: calc(var(--width-small-button) / 5);
+	padding-right: var(--width-small-button);
+	padding-top: calc(var(--width-small-button) / 4);
+	padding-bottom: calc(var(--width-small-button) / 4);
+}
+
+#f-table td #input-name {
+	padding-left: calc(var(--width-small-button) / 4);
+	padding-right: 0;
+	padding-top: calc(var(--width-small-button) / 5);
+	padding-bottom: calc(var(--width-small-button) / 5);
+}
+
+#f-table td #output-x {
+	padding-right: calc(var(--width-small-button) / 10);
+}
+
+#f-table td #output-y {
+	padding-left: calc(var(--width-small-button) / 10);
+}
+
+#f-table td #equation-x {
+	padding-left: calc(var(--width-small-button) / 10);
+}
+
+#f-table td #equation-y {
+	padding-right: calc(var(--width-small-button) / 10);
+	
+}
+
+#keyboard {
+	padding: calc(var(--width-button) / 10);
+}
+
+#keyboard section {
+	margin: calc(var(--width-button) / 10);
+}
+
+#keyboard #menu {
+	flex-basis: 100%;
+}
+
+#keyboard #menu button {
+	width: 25%;
+}
+
+#keyboard #trigonometry {
+	display: none;
+}
+
+#keyboard #division section {
+	margin: 0;
+}

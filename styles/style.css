@@ -1,0 +1,326 @@
+:root {
+
+	/*Dark theme*/
+
+	--dark-color-background: rgb(46, 46, 46);
+	--dark-color-foreground: rgba(32, 32, 32, 0.4);
+	--dark-color-border: rgba(28, 28, 28, 0.3);
+	--dark-color-grid-primary: rgb(128, 128, 128);
+	--dark-color-grid-secondary: rgb(64, 64, 64);
+	--dark-color-line: rgb(239, 239, 239);
+	--dark-color-title: rgb(239, 239, 239);
+	--dark-color-subtitle: rgb(239, 239, 239);
+	--dark-color-text: rgb(239, 239, 239);
+
+	--dark-opacity: 0.8;
+	--dark-opacity-button: 0.7;
+
+	/*Light theme */
+
+	--light-color-background: rgb(255, 255, 255);
+	--light-color-foreground: rgba(255, 255, 255, 0.4);
+	--light-color-border: rgba(176, 176, 176, 0.3);
+	--light-color-grid-primary: rgb(128, 128, 128);
+	--light-color-grid-secondary: rgb(164, 164, 164);
+	--light-color-line: rgb(32, 32, 32);
+	--light-color-title: rgb(46, 46, 46);
+	--light-color-subtitle: rgb(32, 32, 32);
+	--light-color-text: rgb(16, 16, 16);
+
+	--light-opacity: 0.9;
+	--light-opacity-button: 0.7;
+
+	/* Theme */
+
+	--color-background: var(--dark-color-background);
+	--color-foreground: var(--dark-color-foreground);
+	--color-border: var(--dark-color-border);
+	--color-grid-primary: var(--dark-color-grid-primary);
+	--color-grid-secondary: var(--dark-color-grid-secondary);
+	--color-line: var(--dark-color-line);
+	--color-title: var(--dark-color-title);
+	--color-subtitle: var(--dark-color-subtitle);
+	--color-text: var(--dark-color-text);
+	--color-print-foreground: var(--dark-color-print-foreground);
+
+	--opacity: var(--dark-opacity);
+	--opacity-button: var(--dark-opacity-button);
+
+	/* Variables */
+
+	--red:#e03921;
+	--orange:#e07440;
+	--yellow:#d9a925;
+	--green:#249b4e;
+	--cyan:#13a2d6;
+	--blue:#4a3ee9;
+	--purple:#c62f94;
+
+	--default-border: 1px solid var(--color-border);
+	--fraction-border: 1px solid var(--color-text);
+	--radical-border: 0.5px solid var(--color-text);
+
+	--font-math: "Lucida Console", "Courier New", monospace;
+	--font-paragraph: "arial";
+
+	--font-size-title: 2em;
+	--font-size-subtitle: 1.5em;
+	--font-size-input: 1em;
+	--font-size-paragraph: 0.9em;
+
+	--width-small-button: 2em;
+	--width-button: 3em;
+
+	--windows-index: 2;
+}
+
+alert {
+	font-size: var(--font-size-paragraph);
+	font-family: var(--font-paragraph);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	background-color: var(--color-foreground);
+	border: var(--default-border);
+	color: var(--color-text);
+	display: inline;
+	font-size: var(--font-size-paragraph);
+	font-family: var(--font-paragraph);
+	height: var(--width-button);
+	margin: calc(var(--width-button) / 20);
+	min-width: var(--width-button);
+	opacity: var(--opacity-button);
+	padding: calc(var(--width-small-button) / 10);
+}
+
+button span {
+	margin: 0;
+	padding: 0;
+}
+
+button span section {
+	margin: 0;
+	padding: 0;	
+}
+
+button:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+canvas {
+	background-color: var(--color-background);
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+input {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	display: inline;
+	font-size: var(--font-size-input);
+	font-family: var(--font-math);
+	outline: 0;
+}
+
+input[type = text] {
+	color: var(--color-text);
+	padding: calc(var(--width-small-button) / 5);
+}
+
+input[type = color] {
+	cursor: pointer;
+	padding: 0;
+	height: var(--font-size-input);
+	width: var(--font-size-input);
+}
+
+label {
+	align-items: center;
+	color: var(--color-text);
+	display: inline-flex;
+	flex-direction: column; 
+	flex-wrap: nowrap;
+	font-size: var(--font-size-input);
+	font-family: var(--font-math);
+    justify-content:center;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+	color: var(--color-text);
+	font-size: var(--font-size-input);
+	font-family: var(--font-math);
+}
+
+table {
+	border-spacing: 0;
+}
+
+table td{
+	color: var(--color-text);
+	font-size: var(--font-size-input);
+	font-family: var(--font-math);
+}
+
+.nominator {
+	justify-content: center;
+}
+
+.denominator {
+	border-top: var(--fraction-border);
+	justify-content: center;
+}
+
+.radical {
+	border-top: var(--radical-border);
+	justify-content: center;
+}
+
+.left-top {
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: var(--windows-index);
+
+}
+
+.left-bottom {
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: var(--windows-index);
+}
+
+.right-top {
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: var(--windows-index);
+}
+
+.right-bottom {
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: var(--windows-index);
+}
+
+.window {
+	background-color: var(--color-foreground);
+	border: var(--default-border);
+	display: inline-flex;
+	flex-direction: column; 
+	flex-wrap: nowrap;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.window div {
+	align-items: center;
+	border: none;
+	color: var(--color-text);
+	display: flex;
+	font-family: var(--font-math);
+  	justify-content: flex-start;
+	outline: 0;
+	padding: 0;
+}
+
+.window section {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.window span {
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.transparent {
+	opacity: var(--opacity);
+}
+
+.transparent:hover {
+	opacity: 1;	
+}
+
+#domExample {
+	display: none;
+}
+
+#move {
+	padding: calc(var(--width-small-button) / 4);
+}
+
+#move button {
+	height: var(--width-small-button);
+	min-width: var(--width-small-button);
+}
+
+#show {
+	display: none;
+}
+
+#settings {
+	padding: calc(var(--width-small-button) / 5);
+}
+
+#settings #theme {
+	background-color: var(--color-text);
+}
+
+#settings #ms {
+	display: none;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 900px) {
+	:root {
+		--font-size-title: 1.7em;
+		--font-size-subtitle: 1.3em;
+		--font-size-input: 0.9em;
+		--font-size-paragraph: 0.85em;
+
+		--width-small-button: 1.8em;
+		--width-button: 2.5em;
+	}
+
+	#menu button {
+		height: auto;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	:root {
+		--font-size-title: 1.5em;
+		--font-size-subtitle: 0.9em;
+		--font-size-input: 0.75em;
+		--font-size-paragraph: 0.7em;
+
+		--opacity: 1;
+		--opacity-button: 1;
+
+		--width-small-button: 1.25em;
+		--width-button: 1.65em;
+	}
+
+	#menu button {
+		height: auto;
+	}
+}
