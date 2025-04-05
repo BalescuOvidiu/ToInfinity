@@ -1,41 +1,23 @@
 # To Infinity
-<br/>
-<br/>
-<h3>Propus la concursul InfoEducaţie:</h3>
-<ul>
-  <li>Etapa: naţională 2016</li>
-  <li>Categoria: Software Educaţional</li>
-</ul>
-<h3>Contribuitori:</h3>
+
+## Cuprins
+
+1. [Descriere](https://github.com/BalescuOvidiu/ToInfinity#descriere)<br>
+2. [Tehnologii folosite](https://github.com/BalescuOvidiu/ToInfinity#tehnologii-folosite)<br>
+3. [Rezultate](https://github.com/BalescuOvidiu/ToInfinity#rezultate)<br>
+
+## Descriere
+<p align=justify>Platformă online cu diverse aplicații mici care au ca scop rezolvarea problemelor de matematică și algoritmică.</p>
+
+## Tehnologii folosite:
 <ol>
-  <li>
-    Bălescu Ovidiu Gheorghe
-    <ul>
-      <li>Localitate: Bucureşti Sector 4</li>
-      <li>Şcoala: Colegiul Naţional Octav Onicescu</li>
-      <li>Clasa: 11</li>
-    </ul>
-  </li>
-  <li>
-    Cîlţea Marian
-    <ul>
-      <li>Localitate: Ilfov</li>
-      <li>Şcoala: Colegiul Naţional Octav Onicescu</li>
-      <li>Clasa: 11</li>
-    </ul>
-  </li>
+  <li>HTML;</li>
+  <li>CSS;</li>
+  <li>JavaScript cu framework-ul jsmath;</li>
+  <li>Photopea;</li>
 </ol>
 
-<h3>Tehnologii folosite:</h3>
-<ol>
-  <li>HTML5;</li>
-  <li>CSS3;</li>
-  <li>Javascript;</li>
-  <li>PHP;</li>
-  <li>SQL;</li>
-  <li>Mysql;</li>
-  <li>Photoshop CS5;</li>
-  <li>Unity;</li>
-  <li>C#;</li>
-</ol>
+## Rezultate
 
+<p align=justify>InfoEducație 2016 - Calificat la Etapa națională</p>
+<p align=justify>GREPIT 2016 - Calificat la Etapa națională</p>
