@@ -27,27 +27,44 @@ function setTitle(subtitle) {
 	document.title = getTitle() + " - " + subtitle;
 }
 
+function sendMessage(name, email, message) {
+	return true;
+}
+
+function verifyContactMessage(name, email, message, responseObjectId) {
+	if(name.length < 1) {
+		document.getElementById(responseObjectId).innerHTML = "Completați numele.";
+		return false;
+	}
+	if(email.length < 5) {
+		document.getElementById(responseObjectId).innerHTML = "Adresa de mail trebuie să aibă cel puțin 5 caractere.";
+		return false;
+	}
+	if(message.length < 15) {
+		document.getElementById(responseObjectId).innerHTML = "Nu puteți trimite un mesaj mai mic de 15 caractere.";
+		return false;
+	}
+	if(sendMessage(name, email, message)) {
+		document.getElementById(responseObjectId).innerHTML = "Mesajul s-a trimis.";
+		return true;
+	}
+	document.getElementById(responseObjectId).innerHTML = "Mesajul nu s-a putut trimite.";
+	return false;
+}
+
 function sendContactMessage() {
 	name = document.getElementById("contact-name").value;
 	email = document.getElementById("contact-email").value;
 	message = document.getElementById("contact-message").value;
-	document.getElementById("contact-message-status").style.display = "block";
-	if(name.length < 1) {
-		document.getElementById("contact-message-status").innerHTML = "Completați numele.";
-		return ;
+	responseObjectId = "contact-message-status";
+
+	if(verifyContactMessage(name, email, message, responseObjectId)) {
+		document.getElementById("contact-name").value = "";
+		document.getElementById("contact-email").value = "";
+		document.getElementById("contact-message").value = "";
 	}
-	if(email.length < 5) {
-		document.getElementById("contact-message-status").innerHTML = "Adresa de mail trebuie să aibă cel puțin 5 caractere.";
-		return ;
-	}
-	if(message.length < 15) {
-		document.getElementById("contact-message-status").innerHTML = "Nu puteți trimite un mesaj mai mic de 15 caractere.";
-		return ;
-	}
-	document.getElementById("contact-name").value = "";
-	document.getElementById("contact-email").value = "";
-	document.getElementById("contact-message").value = "";
-	document.getElementById("contact-message-status").innerHTML = "Mesajul s-a trimis.";
+
+	document.getElementById(responseObjectId).style.display = "block";
 }
 
 function isValidMathExpression(expresion){
