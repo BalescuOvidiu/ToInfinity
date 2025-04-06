@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title></title>
+
+    	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="scripts/math.js"></script>
+		<script src="scripts/script.js"></script>
+		<script src="scripts/style.js"></script>
+		<script src="scripts/canvas2d.js"></script>
+		<script src="scripts/electricity.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="styles/panel.css"/>
+	</head>
+	<body onload="loadProgram()" onkeydown="checkKeyDown(event)">
+		
+		<!--  -->
+		<canvas 
+			id="canvas" 
+			onwheel="zoom(event)" 
+			onmousemove="updateMousePosition(event)" 
+			onmousedown="dragStart(event)" 
+			onmouseup="dragStop(event)" 
+			onmouseleave="dragStop(event)" >
+		</canvas>
+
+		<!-- Settings -->
+		<div 
+			id="settings" 
+			class="right top panel" 
+			onmousemove="updateMousePosition(event)" >
+			<section>
+				<button onclick="hideGui()">Ascunde interfata</button>
+				<button onclick="showFps()"id="ms"></button>
+				<button onclick="showMs()" id="fps"></button>
+				<button onclick="toggleFractionMode()" id="fraction-mode"> </button>
+				<button onclick="toggleTheme()" id="theme"> </button>
+			</section>
+		</div>
+
+		<!-- Show button -->
+		<div 
+			id="show" 
+			class="right top panel" 
+			onmousemove="updateMousePosition(event)" >
+			<button onclick="showGui()">Afișează</button>
+		</div>
+
+		<!-- Move -->
+		<div 
+			id="move" 
+			class="right bottom panel" 
+			onmousemove="updateMousePosition(event)" 
+			onmouseup="dragStop(event)"	>
+				<div>
+					<button onclick="zoomOut()">-</button>
+					<button onclick="zoomIn()">+</button>
+					<button onclick="resetZoom()">(0)</button>
+				</div>
+				<div>
+					<button onclick="moveLeftUp(canvasMoveSpeedFromButton)">⇖</button>
+					<button onclick="moveUp(canvasMoveSpeedFromButton)">⇑</button>
+					<button onclick="moveRightUp(canvasMoveSpeedFromButton)">⇗</button>
+				</div>
+				<div>
+					<button onclick="moveLeft(canvasMoveSpeedFromButton)">⟸</button>
+					<button onclick="resetOffset()">O</button>
+					<button onclick="moveRight(canvasMoveSpeedFromButton)">⟹</button>
+				</div>
+				<div>
+					<button onclick="moveLeftDown(canvasMoveSpeedFromButton)">⇙</button>
+					<button onclick="moveDown(canvasMoveSpeedFromButton)">⇓</button>
+					<button onclick="moveRightDown(canvasMoveSpeedFromButton)">⇘</button>
+				</div>
+		</div>
+	</body>
+</html>

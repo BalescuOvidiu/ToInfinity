@@ -32,28 +32,32 @@ function getTitleColor() {
 	return getProperty("--color-title");
 }
 
-function getSubtitleColor() {
-	return getProperty("--color-subtitle");
+function getHeadingColor() {
+	return getProperty("--color-heading");
 }
 
 function getTextColor() {
 	return getProperty("--color-text");
 }
 
+function getFontButton() {
+	return getProperty("--font-button");
+}
+
+function getfontInput() {
+	return getProperty("--font-input");
+}
+
+function getFontHeading() {
+	return getProperty("--font-heading");
+}
+
 function getFontParagraph() {
 	return getProperty("--font-paragraph");
 }
 
-function getfontMath() {
-	return getProperty("--font-math");
-}
-
-function getFontTitle() {
-	return getProperty("--font-size-title");
-}
-
-function getFontSubtitle() {
-	return getProperty("--font-size-subtitle");
+function getFontSizeButton() {
+	return getProperty("--font-size-button");
 }
 
 function getFontSizeInput() {
@@ -62,6 +66,10 @@ function getFontSizeInput() {
 
 function getFontSizeParagraph() {
 	return getProperty("--font-size-paragraph");
+}
+
+function getFontSizeHeading() {
+	return getProperty("--font-size-h1");
 }
 
 function getWidth() {
@@ -120,7 +128,8 @@ function setProperty(property, value) {
 function setTheme(theme) {
 	var color = [
 		"-color-background",
-		"-color-foreground",
+		"-color-panel",
+		"-color-button",
 		"-color-border",
 		"-color-grid-primary",
 		"-color-grid-secondary",
@@ -128,8 +137,8 @@ function setTheme(theme) {
 		"-color-title",
 		"-color-subtitle",
 		"-color-text",
-		"-opacity",
-		"-opacity-button"
+		"-color-hovered",
+		"-color-active",
 	];
 
 	for(var i = 0; i < color.length; i++) {

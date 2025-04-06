@@ -20,10 +20,34 @@ function getInputStartSelection(input) {
 
 function setTitleHome() {
 	document.title = getTitle();
+	document.getElementById("title").innerHTML = getTitle();
 }
 
 function setTitle(subtitle) {
 	document.title = getTitle() + " - " + subtitle;
+}
+
+function sendContactMessage() {
+	name = document.getElementById("contact-name").value;
+	email = document.getElementById("contact-email").value;
+	message = document.getElementById("contact-message").value;
+	document.getElementById("contact-message-status").style.display = "block";
+	if(name.length < 1) {
+		document.getElementById("contact-message-status").innerHTML = "Completați numele.";
+		return ;
+	}
+	if(email.length < 5) {
+		document.getElementById("contact-message-status").innerHTML = "Adresa de mail trebuie să aibă cel puțin 5 caractere.";
+		return ;
+	}
+	if(message.length < 15) {
+		document.getElementById("contact-message-status").innerHTML = "Nu puteți trimite un mesaj mai mic de 15 caractere.";
+		return ;
+	}
+	document.getElementById("contact-name").value = "";
+	document.getElementById("contact-email").value = "";
+	document.getElementById("contact-message").value = "";
+	document.getElementById("contact-message-status").innerHTML = "Mesajul s-a trimis.";
 }
 
 function isValidMathExpression(expresion){
@@ -66,10 +90,10 @@ function getHtmlRadical(n, k) {
 
 function getHtmlFraction(s, n, d) {
 	if(0 <= s) {
-		return "<span><section class='nominator'>" + n + "</section><section class='denominator'>" + d + "</section></span>";
+		return "<span><section class='fraction-nominator'>" + n + "</section><section class='fraction-denominator'>" + d + "</section></span>";
 	}
 
-	return "-<span><section class='nominator'>" + n + "</section><section class='denominator'>" + d + "</section></span>";
+	return "-<span><section class='fraction-nominator'>" + n + "</section><section class='fraction-denominator'>" + d + "</section></span>";
 }
 
 function fromHtmlToFormula(formula) {

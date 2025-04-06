@@ -1,0 +1,19 @@
+@import "style.css";
+
+footer {
+}
+
+footer section {
+	background-color: var(--color-panel);
+	width: 100%;
+}
+
+footer section h2 {	
+	color: var(--color-title);
+}
+
+footer .copyright {
+	background-color: var(--color-background);
+	text-align: center;
+}
+

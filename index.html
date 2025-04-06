@@ -6,19 +6,61 @@
 		<meta charset = "UTF-8">
 		<meta name = "viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel = "stylesheet" href = "style.css">
+		<link rel = "stylesheet" href = "styles/style.css">
+		<link rel = "stylesheet" href = "styles/header.css">
+		<link rel = "stylesheet" href = "styles/main.css">
+		<link rel = "stylesheet" href = "styles/footer.css">
 
 		<script src="scripts/script.js"></script>
 		<script src="scripts/style.js"></script>
 	</head>
 	<body onload="setTitleHome()">
-		<div id = "header">
-
-		</div>
-		<div id = "content">
-
-		</div>
-		<div id = "footer">
-		</div>
+		<header class="wrapper">
+			<span class="wrapper left">
+				<h1 class="wrapper wrapper-title" id="title"></h1>
+			</span>
+			<menu class="wrapper">
+				<a class="wrapper bordered" href="graphic.html">Grafice</a>
+				<a class="wrapper bordered" href="graphs.html">Grafuri</a>
+				<a class="wrapper bordered" href="geometry.html">Geometrie</a>
+				<a class="wrapper bordered" href="electricity.html">Electricitate</a>
+			</menu>
+		</header>
+		<main class="wrapper">
+			<img src="images/graphic.png">
+			<div class="wrapper-over">
+				<h1>
+					Desenator grafice matematice: rapid, eficient și simplu.
+				</h1>
+			</div>
+		</main>
+		<footer>
+			<div class="wrapper">
+				<div class="half-width">
+					<section class="wrapper-text">
+						<h2>Despre proiect</h2>
+						<p>Scopul platformei este de ai ajutat pe elevi și pe profesori să ușureze procesul de învățare.</p>
+						<p>Dezvoltarea platformei a început în 2016 și în acel an a apărut prima versiune. Au mai fost două update-uri în August 2020 și în Aprilie 2025.</p>
+						<p>Acest site a fost selectat la concursurile InfoEducație și GREPIT, faza națională, anul 2016.</p>
+					</section>
+				</div>
+				<div class="half-width">
+					<section class="wrapper-text">
+						<h2>Contact</h2>
+						<p>Întâmpini probleme? Vrei să oferi sugestii?</p>
+						<input type="text" id="contact-name" placeholder="Nume">
+						<input type="email" id="contact-email" placeholder="Email">
+						<textarea id="contact-message"></textarea>
+						<button id="contact-send" onclick="sendContactMessage()">Trimite</button>
+						<p id="contact-message-status"></p>
+					</section>
+				</div>
+			</div>
+			<div class="wrapper">
+				<section class="wrapper-text copyright">
+					<h3>Copyright © 2016 - 2025 Bălescu Ovidiu-Gheorghe</h3>
+				</section>
+			</div>
+		</footer>
 	</body>
 </html>

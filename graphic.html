@@ -26,20 +26,71 @@
 			onmouseleave="dragStop(event)" >
 		</canvas>
 
-		<!--  -->
+		<!-- Settings -->
+		<div 
+			id="settings" 
+			class="right top panel" 
+			onmousemove="updateMousePosition(event)" >
+			<section>
+				<button onclick="hideGui()">Ascunde interfata</button>
+				<button onclick="showFps()"id="ms"></button>
+				<button onclick="showMs()" id="fps"></button>
+				<button onclick="toggleSolveEquation()" id="solve-equation"> </button>
+				<button onclick="toggleFractionMode()" id="fraction-mode"> </button>
+				<button onclick="toggleTheme()" id="theme"> </button>
+			</section>
+		</div>
+
+		<!-- Show button -->
+		<div 
+			id="show" 
+			class="right top panel" 
+			onmousemove="updateMousePosition(event)" >
+			<button onclick="showGui()">Afișează</button>
+		</div>
+
+		<!-- Move -->
+		<div 
+			id="move" 
+			class="right bottom panel" 
+			onmousemove="updateMousePosition(event)" 
+			onmouseup="dragStop(event)"	>
+				<div>
+					<button onclick="zoomOut()">-</button>
+					<button onclick="zoomIn()">+</button>
+					<button onclick="resetZoom()">(0)</button>
+				</div>
+				<div>
+					<button onclick="moveLeftUp(canvasMoveSpeedFromButton)">⇖</button>
+					<button onclick="moveUp(canvasMoveSpeedFromButton)">⇑</button>
+					<button onclick="moveRightUp(canvasMoveSpeedFromButton)">⇗</button>
+				</div>
+				<div>
+					<button onclick="moveLeft(canvasMoveSpeedFromButton)">⟸</button>
+					<button onclick="resetOffset()">O</button>
+					<button onclick="moveRight(canvasMoveSpeedFromButton)">⟹</button>
+				</div>
+				<div>
+					<button onclick="moveLeftDown(canvasMoveSpeedFromButton)">⇙</button>
+					<button onclick="moveDown(canvasMoveSpeedFromButton)">⇓</button>
+					<button onclick="moveRightDown(canvasMoveSpeedFromButton)">⇘</button>
+				</div>
+		</div>
+
+		<!-- Table with the functions -->
 		<div 
 			id="functions" 
-			class="left-top window" 
+			class="left top panel" 
 			onmousemove="updateMousePosition(event)" >
 			<table>
 				<tbody id="f-table"></tbody>
 			</table>
 		</div>
 
-		<!--  -->
+		<!-- Keyboard -->
 		<div 
 			id="keyboard" 
-			class="left-bottom window transparent" 
+			class="left bottom panel" 
 			onmousemove="updateMousePosition(event)" >
 			<div>
 				<section id="menu">
@@ -161,59 +212,8 @@
 			</div>
 		</div>
 
-		<!--  -->
-		<div 
-			id="settings" 
-			class="right-top window transparent" 
-			onmousemove="updateMousePosition(event)" >
-			<section>
-				<button onclick="hideGui()">Ascunde interfata</button>
-				<button onclick="showFps()"id="ms"></button>
-				<button onclick="showMs()" id="fps"></button>
-				<button onclick="toggleSolveEquation()" id="solve-equation"> </button>
-				<button onclick="toggleFractionMode()" id="fraction-mode"> </button>
-				<button onclick="toggleTheme()" id="theme"> </button>
-			</section>
-		</div>
-
-		<!--  -->
-		<div 
-			id="show" 
-			class="right-top window transparent" 
-			onmousemove="updateMousePosition(event)" >
-			<button onclick="showGui()">Afișează</button>
-		</div>
-
-		<!--  -->
-		<div 
-			id="move" 
-			class="right-bottom window transparent" 
-			onmousemove="updateMousePosition(event)" 
-			onmouseup="dragStop(event)"	>
-				<section>
-					<button onclick="zoomOut()">(-)</button>
-					<button onclick="zoomIn()">(+)</button>
-					<button onclick="resetZoom()">(0)</button>
-				</section>
-				<section>
-					<button onclick="moveLeftUp(canvasMoveSpeedFromButton)">⇖</button>
-					<button onclick="moveUp(canvasMoveSpeedFromButton)">⇑</button>
-					<button onclick="moveRightUp(canvasMoveSpeedFromButton)">⇗</button>
-				</section>
-				<section>
-					<button onclick="moveLeft(canvasMoveSpeedFromButton)">⟸</button>
-					<button onclick="resetOffset()">O</button>
-					<button onclick="moveRight(canvasMoveSpeedFromButton)">⟹</button>
-				</section>
-				<section>
-					<button onclick="moveLeftDown(canvasMoveSpeedFromButton)">⇙</button>
-					<button onclick="moveDown(canvasMoveSpeedFromButton)">⇓</button>
-					<button onclick="moveRightDown(canvasMoveSpeedFromButton)">⇘</button>
-				</section>
-		</div>
-
-		<!--  -->
-		<table id="domExample">
+		<!-- Template function -->
+		<table id="templateFunctionInput">
 			<tbody>
 				<tr>
 					<td>

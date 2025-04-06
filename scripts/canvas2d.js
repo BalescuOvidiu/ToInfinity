@@ -438,3 +438,57 @@ function toDecimalsMode() {
 	fractionModeEnabled = false;
 	document.getElementById("fraction-mode").innerHTML = getHtmlFraction(1, 1, 2);
 }
+
+function hideGui() {
+	try {
+		document.getElementById("keyboard").style.display = "none";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("move").style.display = "none";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("settings").style.display = "none";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("show").style.display = "flex";
+	}
+	catch(e) {
+		
+	}
+}
+
+function showGui() {
+	try {
+		document.getElementById("keyboard").style.display = "flex";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("move").style.display = "flex";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("settings").style.display = "flex";
+	}
+	catch(e) {
+		
+	}
+	try {
+		document.getElementById("show").style.display = "none";
+	}
+	catch(e) {
+		
+	}
+}

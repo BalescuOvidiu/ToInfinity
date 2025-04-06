@@ -132,7 +132,7 @@ function addFunction(color, name, formula) {
 			previousColors.push(getColor(index));
 		}
 
-		document.querySelector(getFunctionsTable()).innerHTML += document.querySelector("#domExample tbody").innerHTML;
+		document.querySelector(getFunctionsTable()).innerHTML += document.querySelector("#templateFunctionInput tbody").innerHTML;
 		updateFunctionsNumber();
 		updateOrder();
 
@@ -389,20 +389,6 @@ function setName(index, name) {
 
 function setFormula(index, formula) {
 	document.querySelector(getQuery(index) + " #input-formula").innerHTML = formula;
-}
-
-function hideGui() {
-	document.getElementById("keyboard").style.display = "none";
-	document.getElementById("move").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("show").style.display = "inline-flex";
-}
-
-function showGui() {
-	document.getElementById("keyboard").style.display = "inline-flex";
-	document.getElementById("move").style.display = "inline-flex";
-	document.getElementById("settings").style.display = "inline-flex";
-	document.getElementById("show").style.display = "none";
 }
 
 function keyboardShowTrigonometric() {

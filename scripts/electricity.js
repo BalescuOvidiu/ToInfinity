@@ -1,35 +1,31 @@
-/**
- *  script.h
- *
- *  Created 01 February 2021
- *  By Balescu Ovidiu-Gheorghe <balescuovidiu@gmail.com>
- *  Modified 01 February 2021
- *  By Balescu Ovidiu-Gheorghe <balescuovidiu@gmail.com>
- */
+var interval;
 
-var intVariable = 0;
+function loadProgram() {
+	setTitle("Electricitate");
+	
+	importCustom();
+	loadCanvas(getWidth(), getHeight());
 
-/**
- * @desc description
- * @param int - number
- * @return int - result
- */
-function displayInt(integerVariable){
-	console.write(integerVariable);
-	return integerVariable;
+	interval = setInterval(loop, 1);
 }
 
-/**
- * @desc main function used by jQuery library
- * @param function - 
- */
-$(document).ready(function(){
+function loop() {
+	startTiming();
 
-	$("#button").click(function(){
-		displayInt(intVariable);
-	});
-});
+	update();
+	render();
 
+	finishTiming();
+}
+
+function render() {
+	renderBackground();
+	renderAxis(getAxisWidth(), getLineColor());
+}
+
+function update() {
+	
+}
 
 /*
 

@@ -1,0 +1,76 @@
+@import "style.css";
+
+body {
+  	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.panel {
+	background-color: var(--color-panel);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	font-weight: normal;
+	font-style: normal;
+	font-size: var(--font-size-paragraph);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	position: absolute;
+	z-index: var(--panel-index);
+	padding: var(--padding-medium);
+}
+
+.panel div {
+	display: flex;
+  	justify-content: flex-start;
+	outline: 0;
+	padding: 0;
+}
+
+.panel section {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding: var(--padding-medium);
+}
+
+.panel span {
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.panel button {
+	height: var(--width-button);
+	margin: var(--margin-small);
+	padding: var(--padding-medium);
+	outline: 0;	
+}
+
+.panel input {
+	border: none;
+	height: var(--width-button);
+	margin: var(--margin-small);
+	padding: var(--padding-medium);
+	outline: 0;
+}
+
+#move button {
+	height: var(--width-button-small);
+	min-width: var(--width-button-small);
+}
+
+#show {
+	display: none;
+}
+
+#settings #theme {
+	background-color: var(--color-text);
+}
+
+#settings #ms {
+	display: none;
+}

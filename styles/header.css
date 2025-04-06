@@ -1,0 +1,34 @@
+@import "style.css";
+
+header {
+	background-color: var(--color-panel);
+}
+
+header #title {
+	color: var(--color-title);
+}
+
+header menu {
+	margin: 0;
+	padding: 0;
+}
+
+header menu li {
+	display: inline-flex;
+	margin: 0;
+}
+
+header menu a {
+	padding: 2em;
+	text-decoration: none;
+	text-align: center;
+}
+
+header menu a:hover {
+	background-color: var(--color-hovered);
+	cursor: pointer;
+}
+
+header menu a:active {
+	background-color: var(--color-active);
+}
