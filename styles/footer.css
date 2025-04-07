@@ -18,8 +18,23 @@ footer .bordered {
 }
 
 footer .copyright {
-	background-color: var(--color-background);
 	text-align: center;
+}
+
+footer .description img {
+	margin-right: 1.5em;
+	width: 2em;
+}
+
+footer .used-technologies {
+	background-color: var(--color-background);
+	justify-content: center;
+	text-align: center;
+}
+
+footer .used-technologies img {
+	margin: 2em 4em;
+	height: 4em;
 }
 
 @media only screen and (max-width: 900px) {
