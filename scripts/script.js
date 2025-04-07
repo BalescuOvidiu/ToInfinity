@@ -41,7 +41,7 @@ function verifyContactMessage(name, email, message, responseObjectId) {
 		return false;
 	}
 	if(message.length < 15) {
-		document.getElementById(responseObjectId).innerHTML = "Nu puteți trimite un mesaj mai mic de 15 caractere.";
+		document.getElementById(responseObjectId).innerHTML = "Mesajul trebuie să aibă cel puțin 15 caractere.";
 		return false;
 	}
 	if(sendMessage(name, email, message)) {

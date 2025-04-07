@@ -16,7 +16,8 @@
 
 	--dark-color-background: rgb(46, 46, 46);
 	--dark-color-panel: rgb(32, 32, 32);
-	--dark-color-button: rgb(38, 38, 38);
+	--dark-color-panel-button: rgb(38, 38, 38);
+	--dark-color-button: rgb(173,90,50);
 	--dark-color-border: rgb(60, 60, 60);
 	--dark-color-grid-primary: rgb(128, 128, 128);
 	--dark-color-grid-secondary: rgb(64, 64, 64);
@@ -25,13 +26,14 @@
 	--dark-color-heading: rgb(239, 239, 239);
 	--dark-color-text: rgb(239, 239, 239);
 	--dark-color-hovered: rgb(46, 46, 46);
-	--dark-color-active: var(--orange);
+	--dark-color-active: rgb(38, 38, 38);
 
 	/*Light theme */
 
 	--light-color-background: rgb(255, 255, 255);
-	--light-color-panel: rgb(240, 240, 240);
-	--light-color-button: rgb(220, 220, 220);
+	--light-color-panel: rgb(230, 230, 230);
+	--light-color-panel-button: rgb(210, 210, 210);
+	--light-color-button: rgb(173,90,50);
 	--light-color-border: rgb(60, 60, 60);
 	--light-color-grid-primary: rgb(128, 128, 128);
 	--light-color-grid-secondary: rgb(164, 164, 164);
@@ -40,12 +42,13 @@
 	--light-color-heading: rgb(32, 32, 32);
 	--light-color-text: rgb(16, 16, 16);
 	--light-color-hovered: rgb(200, 200, 200);
-	--light-color-active: var(--orange);
+	--light-color-active: rgb(220, 220, 220);
 
 	/* Theme variables */
 
 	--color-background: var(--dark-color-background);
 	--color-panel: var(--dark-color-panel);
+	--color-panel-button: var(--dark-color-panel-button);
 	--color-button: var(--dark-color-button);
 	--color-border: var(--dark-color-border);
 	--color-grid-primary: var(--dark-color-grid-primary);
@@ -182,7 +185,7 @@ button {
 	margin-top: var(--margin-big);
 	margin-bottom: var(--margin-big);
 	min-width: var(--width-button);
-	padding: var(--padding-medium);
+	padding: var(--padding-big);
 }
 
 button span {
@@ -205,14 +208,6 @@ button:active {
 	background-color: var(--color-active);
 }
 
-canvas {
-	background-color: var(--color-background);
-	left: 0;
-	top: 0;
-	position: absolute;
-	z-index: 1;
-}
-
 input {
 	background-color: rgba(0, 0, 0, 0);
 	border: var(--default-border);
@@ -223,8 +218,22 @@ input {
 	margin-right: var(--margin-big);
 	margin-top: var(--margin-big);
 	margin-bottom: var(--margin-big);
-	padding: 0;
+	padding: var(--padding-big);
 	width: 100%;
+}
+
+input[type = text] {
+
+}
+
+input[type = color] {
+	cursor: pointer;
+	width: var(--width-button-small);
+}
+
+input:focus {
+	border-color: var(--color-title);
+	outline: 0;
 }
 
 textarea {
@@ -240,19 +249,16 @@ textarea {
 	margin-right: var(--margin-big);
 	margin-top: var(--margin-big);
 	margin-bottom: var(--margin-big);
-	padding: var(--padding-medium);
+	padding: var(--padding-big);
 	outline: 0;
 	max-width: 100%;
+	min-width: 100%;
 	width: 100%;
 }
 
-input[type = text] {
-
-}
-
-input[type = color] {
-	cursor: pointer;
-	width: var(--width-button-small);
+textarea:focus {
+	border-color: var(--color-title);
+	outline: 0;
 }
 
 label {
@@ -347,6 +353,10 @@ table td{
 	justify-content: center;
 }
 
+.bordered {
+	border-left: var(--default-border);
+}
+
 .radical {
 	border-top: var(--radical-border);
 	justify-content: center;
@@ -354,6 +364,10 @@ table td{
 
 #contact-message-status {
 	display: none;
+}
+
+#text-over-image {
+	color: var(--dark-color-heading) !important;
 }
 
 @media only screen and (max-width: 900px) {
@@ -365,20 +379,46 @@ table td{
 		--width-button-small: 1.8em;
 		--width-button: 2.5em;
 	}
-	.bordered {
-		border-top: var(--default-border);
-	}
 	.half-width {
 		width: 100%;
 	}
 	.wrapper {
 		flex-direction: column;
-		width: 100%;		
+		width: 100%;
 	}
 	.wrapper-title {
 		text-align: center;
 	}
 	.wrapper-over {
 		justify-content: flex-start;
+	}
+	.bordered {
+		border-left: none;
+		border-top: var(--default-border);
+		margin-left: 0;
+		padding-left: 0;
+	}
+	menu section {
+		padding: 0 1em;
+	}
+	menu a {
+		border-top: var(--default-border);
+	}
+	menu .bordered {
+		border-top: none;
+	}
+	menu a:nth-child(even) .bordered {
+		border-left: var(--default-border);
+	}
+	menu .wrapper {
+		display: inline-flex;
+		flex-direction: row;
+		width: 100%;
+	}
+	menu .wrapper span {
+		margin: 1em 0;
+		padding: 1em 2em;
+		text-align: center;
+		width: 100%;
 	}
 }

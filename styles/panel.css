@@ -5,6 +5,14 @@ body {
 	overflow-y: hidden;
 }
 
+canvas {
+	background-color: var(--color-background);
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 1;
+}
+
 .panel {
 	background-color: var(--color-panel);
 	display: flex;
@@ -44,10 +52,20 @@ body {
 }
 
 .panel button {
+	background-color: var(--color-panel-button);
 	height: var(--width-button);
 	margin: var(--margin-small);
 	padding: var(--padding-medium);
 	outline: 0;	
+}
+
+.panel button:hover {
+	background-color: var(--color-hovered);
+	cursor: pointer;
+}
+
+.panel button:active {
+	background-color: var(--color-button);
 }
 
 .panel input {

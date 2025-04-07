@@ -4,8 +4,16 @@ header {
 	background-color: var(--color-panel);
 }
 
+header button {
+	background-color: rgba(0, 0, 0, 0);
+	height: auto;
+	margin: 0;
+	padding: 1em;
+}
+
 header #title {
 	color: var(--color-title);
+	margin: 0;
 }
 
 header menu {
@@ -19,16 +27,33 @@ header menu li {
 }
 
 header menu a {
-	padding: 2em;
+	align-items: center;
+	display: inline-flex;
 	text-decoration: none;
 	text-align: center;
 }
 
+header h1 button {
+	margin: 0 0.5em;
+}
+
+header menu span {
+	align-items: center;
+	box-sizing: border-box;
+	margin: 1em 0;
+	padding: 1em 2em;
+	text-align: center;
+}
+
 header menu a:hover {
-	background-color: var(--color-hovered);
+	background-color: var(--color-button);
 	cursor: pointer;
 }
 
 header menu a:active {
 	background-color: var(--color-active);
+}
+
+@media only screen and (max-width: 900px) {
+
 }

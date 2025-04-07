@@ -6,10 +6,7 @@
 		<meta charset = "UTF-8">
 		<meta name = "viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel = "stylesheet" href = "styles/style.css">
-		<link rel = "stylesheet" href = "styles/header.css">
 		<link rel = "stylesheet" href = "styles/main.css">
-		<link rel = "stylesheet" href = "styles/footer.css">
 
 		<script src="scripts/script.js"></script>
 		<script src="scripts/style.js"></script>
@@ -17,19 +14,31 @@
 	<body onload="setTitleHome()">
 		<header class="wrapper">
 			<span class="wrapper left">
-				<h1 class="wrapper wrapper-title" id="title"></h1>
+					<button onclick="toggleTheme()"><h1 id="title"></h1></button>
 			</span>
 			<menu class="wrapper">
-				<a class="wrapper bordered" href="graphic.html">Grafice</a>
-				<a class="wrapper bordered" href="graphs.html">Grafuri</a>
-				<a class="wrapper bordered" href="geometry.html">Geometrie</a>
-				<a class="wrapper bordered" href="electricity.html">Electricitate</a>
+				<section class="wrapper">
+					<a class="wrapper" href="graphic.html">
+						<span class="bordered">Grafice</span>
+					</a>
+					<a class="wrapper" href="graphs.html">
+						<span class="bordered">Grafuri</span>
+					</a>
+				</section>
+				<section class="wrapper">
+					<a class="wrapper" href="geometry.html">
+						<span class="bordered">Geometrie</span>
+					</a>
+					<a class="wrapper" href="electricity.html">
+						<span class="bordered">Electricitate</span>
+					</a>
+				</section>
 			</menu>
 		</header>
 		<main class="wrapper">
 			<img src="images/graphic.png">
 			<div class="wrapper-over">
-				<h1>
+				<h1 id="text-over-image">
 					Desenator grafice matematice: rapid, eficient și simplu.
 				</h1>
 			</div>
@@ -46,13 +55,15 @@
 				</div>
 				<div class="half-width">
 					<section class="wrapper-text">
-						<h2>Contact</h2>
-						<p>Întâmpini probleme? Vrei să oferi sugestii?</p>
-						<input type="text" id="contact-name" placeholder="Nume">
-						<input type="email" id="contact-email" placeholder="Email">
-						<textarea id="contact-message"></textarea>
-						<button id="contact-send" onclick="sendContactMessage()">Trimite</button>
-						<p id="contact-message-status"></p>
+						<div class="bordered">
+							<h2>Contact</h2>
+							<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj.</p>
+							<input type="text" id="contact-name" placeholder="Nume">
+							<input type="email" id="contact-email" placeholder="Email">
+							<textarea id="contact-message"></textarea>
+							<button id="contact-send" placeholder="Un mesaj de minim 15 caractere." onclick="sendContactMessage()">Trimite mesaj</button>
+							<p id="contact-message-status"></p>
+						</div>
 					</section>
 				</div>
 			</div>
