@@ -116,12 +116,25 @@ a {
 	color: var(--color-text);
 	font-family: var(--font-paragraph);
 	font-size: var(--font-size-paragraph);
+	text-decoration: none;
 }
 
-span {
+span  {
 	color: var(--color-text);
 	font-family: var(--font-paragraph);
 	font-size: var(--font-size-paragraph);
+}
+
+ol, ul {
+	color: var(--color-text);
+	font-family: var(--font-paragraph);
+	font-size: var(--font-size-paragraph);
+	list-style-position: inside;
+	padding-left: 0em;
+}
+ol li, ul li {
+	margin-left: 0em;
+	margin-bottom: 0.8em;
 }
 
 p {
@@ -229,6 +242,15 @@ input[type = text] {
 input[type = color] {
 	cursor: pointer;
 	width: var(--width-button-small);
+}
+
+input[type = checkbox] {
+	border-radius: 0;
+	cursor: pointer;
+	display: inline;
+	height: 1.5em;
+	outline: 0;
+	width: 1.5em;
 }
 
 input:focus {

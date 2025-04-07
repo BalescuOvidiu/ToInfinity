@@ -39,48 +39,73 @@
 			<img src="images/graphic.png">
 			<div class="wrapper-over">
 				<h1 id="text-over-image">
-					Desenator grafice matematice: rapid, eficient și simplu.
+					Desenator pentru grafice matematice: rapid, eficient și simplu.
 				</h1>
 			</div>
 		</main>
 		<footer>
 			<div class="wrapper">
 				<div class="half-width">
-					<section class="wrapper-text description">
-						<h2>Despre proiect</h2>
-						<p>Scopul platformei este de ai ajutat pe elevi și pe profesori să ușureze procesul de învățare.</p>
-						<p>Dezvoltarea platformei a început în 2016 și în acel an a apărut prima versiune. Au mai fost două update-uri în August 2020 și în Aprilie 2025.</p>
-						<p>Acest site a fost selectat la concursurile InfoEducație și GREPIT, faza națională, anul 2016.</p>
-						<p>
-							<a href="https://github.com/BalescuOvidiu/ToInfinity"><img src="images/logoGitHub.png"></a>
-							<a href="https://www.linkedin.com/in/ovidiu-balescu-066017271/"><img src="images/logoLinkedIn.png"></a>
-						</p>
+					<section class="wrapper-text contact">
+							<h2>Contact</h2>
+							<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj.</p>
+							<input type="text" id="contact-name" placeholder="Nume"/>
+							<input type="email" id="contact-email" placeholder="Email"/>
+							<textarea id="contact-message"></textarea>
+							<div>
+								<input type="checkbox" id="contact-newsletter"/>
+								<span>Abonează-te la noutățile legate de platformă primite pe mail.</span>
+							</div>							
+							<button id="contact-send" placeholder="Un mesaj de minim 15 caractere." onclick="sendContactMessage()">
+								Trimite mesaj
+							</button>
+							<p id="contact-message-status"></p>
 					</section>
 				</div>
 				<div class="half-width">
-					<section class="wrapper-text contact">
+					<section class="wrapper-text description">
 						<div class="bordered">
-							<h2>Contact</h2>
-							<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj.</p>
-							<input type="text" id="contact-name" placeholder="Nume">
-							<input type="email" id="contact-email" placeholder="Email">
-							<textarea id="contact-message"></textarea>
-							<button id="contact-send" placeholder="Un mesaj de minim 15 caractere." onclick="sendContactMessage()">Trimite mesaj</button>
-							<p id="contact-message-status"></p>
+							<h2>Despre proiect</h2>
+							<p>Scopul platformei este de ai ajutat pe elevi și pe profesori să ușureze procesul de învățare. În acest moment, platforma are un desenator pentru grafice matematice.</p>
+							<p>Dezvoltarea platformei a început în 2016 și în acel an a apărut prima versiune. Au mai fost două update-uri în August 2020 și în Aprilie 2025.</p>
+							<p>Acest site a fost selectat la concursurile InfoEducație și GREPIT, faza națională, anul 2016.</p>
+							<div>
+								<a href="https://github.com/BalescuOvidiu/ToInfinity">
+									<img src="images/logoGitHub.png">
+								</a>
+								<a href="https://www.linkedin.com/in/ovidiu-balescu-066017271/">
+									<img src="images/logoLinkedIn.png">
+								</a>
+							</div>
+							<h2>Viitoare îmbunătățiri</h2>
+							<ol>
+								<li>Finalizarea paginii pentru grafuri. Utilizatorul va putea desena grafuri folosind matricea de adiacență sau listă de muchii. Va putea să ruleze algoritmi cunoscuți: Dijkstra, Roy-Floyd, căutarea în lățime și în adâncime.</li>
+								<li>Dezvoltarea paginii pentru geometrie, unde se pot: desena forme geometrice, detecta tipul acestora, calcula aria și perimetru.</li>
+								<li>Dezvoltarea paginii pentru electrică, care va putea fi folosită pentru: calcule pe circuite simple și generarea de circuite cu divizori rezistivi.</li>
+							</ol>
 						</div>
 					</section>
 				</div>
 			</div>
 			<div class="wrapper">
 				<section class="wrapper-text used-technologies">
-					<h3>Tehnologii folosite</h3>
+					<h2>Concursuri</h2>
+					<div>
+						<a href="https://infoeducatie.ro/acasa">
+							<img src="images/logoInfoEducatie.png">
+						</a>
+						<a href="https://grepit.info/">
+							<img src="images/logoGrepit.png">
+						</a>
+					</div>
+					<h2>Tehnologii folosite</h2>
 					<div>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="images/logoHtml.png"></a>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="images/logoCss.png"></a>
 						<a href="https://javascript.info"><img src="images/logoJavaScript.png"></a>
 						<a href="https://mathjs.org/index.html"><img src="images/logoMathjs.png"></a>
 					</div>
-					<h3>Software folosit</h3>
+					<h2>Software folosit</h2>
 					<div>
 						<a href="https://www.linuxmint.com/"><img src="images/logoLinuxMint.png"></a>
 						<a href="https://www.sublimetext.com/"><img src="images/logoSublimeText.png"></a>
@@ -90,7 +115,7 @@
 			</div>
 			<div class="wrapper">
 				<section class="wrapper-text copyright">
-					<h3>Copyright © 2016 - 2025 Bălescu Ovidiu-Gheorghe</h3>
+					<h4>Copyright © 2016 - 2025 Bălescu Ovidiu-Gheorghe</h4>
 				</section>
 			</div>
 		</footer>
