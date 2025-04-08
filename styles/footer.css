@@ -14,32 +14,43 @@ footer section h2 {
 }
 
 footer .bordered {
-	margin-left: -1em;
-	padding-left: 1em;
+	margin-left: calc(-1 * var(--padding-section));
+	padding-left: var(--padding-section);
 }
 
 footer .copyright {
+	background-color: var(--color-background);
 	text-align: center;
 }
 
 footer .description img {
-	margin-right: 1.5em;
-	width: 2em;
+	margin-right: var(--margin-section);
+	height: var(--height-button-small);
+	width: auto;
 }
 
-footer .used-technologies {
+footer .results {
 	background-color: var(--color-background);
+}
+
+footer .showcase {
 	justify-content: center;
 	text-align: center;
 }
 
-footer .used-technologies h2 {
+footer .showcase h2 {
 	color: var(--color-text);
 }
 
-footer .used-technologies img {
-	margin: 2em 4em;
-	height: 4em;
+footer .showcase p {
+	margin: auto;
+	width: 40%;
+}
+
+footer .showcase img {
+	margin: var(--padding-wide);
+	height: var(--height-button-big);
+	width: auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -48,8 +59,11 @@ footer .used-technologies img {
 		padding-left: 0;
 	}
 
+	footer .showcase p {
+		width: 80%;
+	}
+
 	footer .used-technologies img {
-		margin: 2em 1.5em;
-		height: 3.5em;
+		width: auto;
 	}
 }

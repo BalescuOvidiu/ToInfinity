@@ -21,27 +21,10 @@ header menu {
 	padding: 0;
 }
 
-header menu li {
-	display: inline-flex;
-	margin: 0;
-}
-
 header menu a {
 	align-items: center;
 	display: inline-flex;
 	text-decoration: none;
-	text-align: center;
-}
-
-header h1 button {
-	margin: 0 0.5em;
-}
-
-header menu span {
-	align-items: center;
-	box-sizing: border-box;
-	margin: 1em 0;
-	padding: 1em 2em;
 	text-align: center;
 }
 
@@ -54,6 +37,10 @@ header menu a:active {
 	background-color: var(--color-active);
 }
 
-@media only screen and (max-width: 900px) {
-
+header menu span {
+	align-items: center;
+	box-sizing: border-box;
+	margin: 1em 0;
+	padding: 1em 2em;
+	text-align: center;
 }

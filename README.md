@@ -13,7 +13,7 @@
 <ol>
   <li>HTML;</li>
   <li>CSS;</li>
-  <li>JavaScript cu framework-ul jsmath;</li>
+  <li>JavaScript cu framework-ul <a href="https://mathjs.org/index.html">Mathjs</a>;</li>
   <li>Photopea;</li>
 </ol>
 

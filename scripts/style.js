@@ -8,8 +8,8 @@ function getBackgroundColor() {
 	return getProperty("--color-background");
 }
 
-function getForegroundColor() {
-	return getProperty("--color-foreground");
+function getPanelColor() {
+	return getProperty("--color-panel");
 }
 
 function getBorderColor() {

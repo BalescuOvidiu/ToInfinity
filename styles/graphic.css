@@ -1,17 +1,17 @@
 @import "panel.css";
 
 #f-table #input-formula {
-	margin-right: 2em;
+	margin-right: var(--margin-wide);
 }
 
 #f-table button {
-	height: var(--width-button-small);
-	min-width: var(--width-button-small);
+	height: var(--height-button-small);
+	min-width: var(--height-button-small);
 }
 
 #f-table #input-color {
-	height: var(--width-button-small);
-	min-width: var(--width-button-small);
+	height: var(--height-button-small);
+	min-width: var(--height-button-small);
 }
 
 #keyboard #menu {

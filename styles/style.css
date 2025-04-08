@@ -2,95 +2,104 @@
 
 	/* Color variables */
 
-	--red: #e03921;
-	--orange: #e07440;
-	--yellow: #d9a925;
-	--green: #249b4e;
-	--cyan: #13a2d6;
-	--blue: #4a3ee9;
-	--purple: #c62f94;
-	--gray: rgb(46, 46, 46);
+	--red:       #e03921;
+	--orange:    #e07440;
+	--yellow:    #d9a925;
+	--green:     #249b4e;
+	--cyan:      #13a2d6;
+	--blue:      #4a3ee9;
+	--purple:    #c62f94;
+	--gray:      rgb(46, 46, 46);
 	--dark-gray: rgb(32, 32, 32);
 
 	/*Dark theme*/
 
-	--dark-color-background: rgb(46, 46, 46);
-	--dark-color-panel: rgb(32, 32, 32);
-	--dark-color-panel-button: rgb(38, 38, 38);
-	--dark-color-button: rgb(173,90,50);
-	--dark-color-border: rgb(60, 60, 60);
-	--dark-color-grid-primary: rgb(128, 128, 128);
+	--dark-color-background:     rgb(46, 46, 46);
+	--dark-color-panel:          rgb(32, 32, 32);
+	--dark-color-panel-button:   rgb(38, 38, 38);
+	--dark-color-button:         rgb(173,90,50);
+	--dark-color-border:         rgb(60, 60, 60);
+	--dark-color-grid-primary:   rgb(128, 128, 128);
 	--dark-color-grid-secondary: rgb(64, 64, 64);
-	--dark-color-line: rgb(239, 239, 239);
-	--dark-color-title: var(--orange);
-	--dark-color-heading: rgb(239, 239, 239);
-	--dark-color-text: rgb(239, 239, 239);
-	--dark-color-hovered: rgb(46, 46, 46);
-	--dark-color-active: rgb(38, 38, 38);
+	--dark-color-line:           rgb(239, 239, 239);
+	--dark-color-title:          var(--orange);
+	--dark-color-heading:        rgb(239, 239, 239);
+	--dark-color-text:           rgb(239, 239, 239);
+	--dark-color-hovered:        rgb(46, 46, 46);
+	--dark-color-active:         rgb(38, 38, 38);
 
 	/*Light theme */
 
-	--light-color-background: rgb(255, 255, 255);
-	--light-color-panel: rgb(230, 230, 230);
-	--light-color-panel-button: rgb(210, 210, 210);
-	--light-color-button: rgb(173,90,50);
-	--light-color-border: rgb(60, 60, 60);
-	--light-color-grid-primary: rgb(128, 128, 128);
+	--light-color-background:     rgb(255, 255, 255);
+	--light-color-panel:          rgb(230, 230, 230);
+	--light-color-panel-button:   rgb(210, 210, 210);
+	--light-color-button:         rgb(173,90,50);
+	--light-color-border:         rgb(60, 60, 60);
+	--light-color-grid-primary:   rgb(128, 128, 128);
 	--light-color-grid-secondary: rgb(164, 164, 164);
-	--light-color-line: rgb(32, 32, 32);
-	--light-color-title: var(--orange);
-	--light-color-heading: rgb(32, 32, 32);
-	--light-color-text: rgb(16, 16, 16);
-	--light-color-hovered: rgb(200, 200, 200);
-	--light-color-active: rgb(220, 220, 220);
+	--light-color-line:           rgb(32, 32, 32);
+	--light-color-title:          var(--orange);
+	--light-color-heading:        rgb(32, 32, 32);
+	--light-color-text:           rgb(16, 16, 16);
+	--light-color-hovered:        rgb(200, 200, 200);
+	--light-color-active:         rgb(220, 220, 220);
 
 	/* Theme variables */
 
-	--color-background: var(--dark-color-background);
-	--color-panel: var(--dark-color-panel);
-	--color-panel-button: var(--dark-color-panel-button);
-	--color-button: var(--dark-color-button);
-	--color-border: var(--dark-color-border);
-	--color-grid-primary: var(--dark-color-grid-primary);
+	--color-background:     var(--dark-color-background);
+	--color-panel:          var(--dark-color-panel);
+	--color-panel-button:   var(--dark-color-panel-button);
+	--color-button:         var(--dark-color-button);
+	--color-border:         var(--dark-color-border);
+	--color-grid-primary:   var(--dark-color-grid-primary);
 	--color-grid-secondary: var(--dark-color-grid-secondary);
-	--color-line: var(--dark-color-line);
-	--color-title: var(--dark-color-title);
-	--color-heading: var(--dark-color-heading);
-	--color-text: var(--dark-color-text);
-	--color-hovered: var(--dark-color-hovered);
-	--color-active: var(--dark-color-active);
+	--color-line:           var(--dark-color-line);
+	--color-title:          var(--dark-color-title);
+	--color-heading:        var(--dark-color-heading);
+	--color-text:           var(--dark-color-text);
+	--color-hovered:        var(--dark-color-hovered);
+	--color-active:         var(--dark-color-active);
 
 	/* Border variables */
 
-	--default-border: 1px solid var(--color-border);
-	--fraction-border: 1px solid var(--color-text);
+	--default-border:   1px solid var(--color-border);
+	--fraction-border:  1px solid var(--color-text);
 	--radical-border: 0.5px solid var(--color-text);
 
-	/* Sizing variables*/
+	/* Sizing variables */
 
-	--margin-small: 0.1em;
-	--margin-medium: 0.2em;
-	--margin-big: 0.5em;
-	--padding-small: 0.1em;
-	--padding-medium: 0.2em;
-	--padding-big: 0.5em;
-	--width-button: 3em;
-	--width-button-small: 2em;
+	--margin-small:  0.1rem;
+	--margin-medium: 0.2rem;
+	--margin-big:    0.5rem;
+	--margin-section:  1rem;
+	--margin-wide:     2rem;
+
+	--padding-small:  0.1rem;
+	--padding-medium: 0.2rem;
+	--padding-big:    0.5rem;
+	--padding-section:  1rem;
+	--padding-wide:     2rem;
+
+	--padding-list: 1.5rem;
+
+	--height-button-small:  2rem;
+	--height-button-medium: 3rem;
+	--height-button-big:    4rem;
 
 	--panel-index: 2;
 
 	/* Font variables */
 
-	--font-button: Verdana;
-	--font-input: Verdana;
+	--font-button:    Verdana;
+	--font-input:     Verdana;
 	--font-paragraph: Verdana;
-	--font-heading: Arial;
+	--font-heading:   Arial;
 
-	--font-size-button: 1em;
-	--font-size-input: 1em;
-	--font-size-paragraph: 1em;
-	--font-size-h1: calc(2 * var(--font-size-paragraph));
-	--font-size-h2: calc(1.5 * var(--font-size-paragraph));
+	--font-size-button:    1rem;
+	--font-size-input:     1rem;
+	--font-size-paragraph: 1rem;
+	--font-size-h1: calc(2.00 * var(--font-size-paragraph));
+	--font-size-h2: calc(1.50 * var(--font-size-paragraph));
 	--font-size-h3: calc(1.17 * var(--font-size-paragraph));
 	--font-size-h4: calc(1.05 * var(--font-size-paragraph));
 	--font-size-h5: calc(0.85 * var(--font-size-paragraph));
@@ -98,12 +107,12 @@
 }
 
 ::placeholder {
-  color: var(--color-text);
-  opacity: 1;
+	color: var(--color-text);
+	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-  color: var(--color-text);
+	color: var(--color-text);
 }
 
 alert {
@@ -129,17 +138,15 @@ ol, ul {
 	color: var(--color-text);
 	font-family: var(--font-paragraph);
 	font-size: var(--font-size-paragraph);
-	list-style-position: inside;
-	padding-left: 0em;
+	list-style-position: outside;
+	padding-left: var(--padding-list);
 }
-ol li, ul li {
-	margin-left: 0em;
-	margin-bottom: 0.8em;
+li {
+	margin-bottom: var(--margin-big);
 }
 
 p {
 	color: var(--color-text);
-	display: flex;
 	font-family: var(--font-paragraph);
 	font-size: var(--font-size-paragraph);
 }
@@ -180,6 +187,12 @@ h6 {
 	font-family: var(--font-heading);
 }
 
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -189,15 +202,17 @@ body {
 button {
 	background-color: var(--color-button);
 	border: none;
+	box-sizing: border-box;
 	color: var(--color-text);
 	display: inline;
 	font-family: var(--font-button);
 	font-size: var(--font-size-button);
-	height: var(--width-button);
+	height: var(--height-button-medium);
+	margin-left: 0;
 	margin-right: var(--margin-big);
 	margin-top: var(--margin-big);
 	margin-bottom: var(--margin-big);
-	min-width: var(--width-button);
+	min-width: var(--height-button-medium);
 	padding: var(--padding-big);
 }
 
@@ -226,7 +241,8 @@ input {
 	border: var(--default-border);
 	box-sizing: border-box;
 	color: var(--color-text);
-	height: 2em;
+	font-size: var(--font-size-input);
+	font-family: var(--font-input);
 	margin-left: 0;
 	margin-right: var(--margin-big);
 	margin-top: var(--margin-big);
@@ -241,16 +257,16 @@ input[type = text] {
 
 input[type = color] {
 	cursor: pointer;
-	width: var(--width-button-small);
+	width: var(--height-button-small);
 }
 
 input[type = checkbox] {
 	border-radius: 0;
 	cursor: pointer;
 	display: inline;
-	height: 1.5em;
+	height: var(--font-size-input);
 	outline: 0;
-	width: 1.5em;
+	width: var(--font-size-input);
 }
 
 input:focus {
@@ -266,7 +282,7 @@ textarea {
 	display: inline;
 	font-size: var(--font-size-input);
 	font-family: var(--font-input);
-	height: 10em;
+	height: calc(10 * var(--font-size-input));
 	margin-left: 0;
 	margin-right: var(--margin-big);
 	margin-top: var(--margin-big);
@@ -344,9 +360,10 @@ table td{
 	flex-direction: row;
 }
 
-.wrapper-text {
-	box-sizing: border-box;
-	padding: 1em;
+.wrapper-content {
+    box-sizing: border-box;
+	display: block;
+	padding: var(--padding-section);
 }
 
 .wrapper-over {
@@ -359,11 +376,6 @@ table td{
 	text-align:center;
 	height: 100%;
 	width: 100%;
-}
-
-.wrapper-title {
-	box-sizing: border-box;
-	padding: 0.2em;
 }
 
 .fraction-nominator {
@@ -384,62 +396,66 @@ table td{
 	justify-content: center;
 }
 
-#contact-message-status {
-	display: none;
-}
-
 #text-over-image {
 	color: var(--dark-color-heading) !important;
 }
 
 @media only screen and (max-width: 900px) {
 	:root {
-		--font-size-button: 0.9em;
-		--font-size-input: 0.9em;
-		--font-size-paragraph: 0.85em;
+		--font-size-button:    0.9rem;
+		--font-size-input:     0.9rem;
+		--font-size-paragraph: 0.85rem;
 
-		--width-button-small: 1.8em;
-		--width-button: 2.5em;
+		--height-button-small:  1.8rem;
+		--height-button-medium: 2.5rem;
+		--height-button-big:    3.2rem;
+
+	    --padding-list: 1rem;
 	}
+
 	.half-width {
 		width: 100%;
 	}
+
 	.wrapper {
 		flex-direction: column;
 		width: 100%;
 	}
-	.wrapper-title {
-		text-align: center;
-	}
+
 	.wrapper-over {
 		justify-content: flex-start;
 	}
+
 	.bordered {
 		border-left: none;
 		border-top: var(--default-border);
 		margin-left: 0;
 		padding-left: 0;
 	}
+
 	menu section {
-		padding: 0 1em;
+		padding: 0 var(--padding-section);
 	}
+
 	menu a {
 		border-top: var(--default-border);
 	}
+
 	menu .bordered {
 		border-top: none;
 	}
+
 	menu a:nth-child(even) .bordered {
 		border-left: var(--default-border);
 	}
+
 	menu .wrapper {
-		display: inline-flex;
 		flex-direction: row;
-		width: 100%;
 	}
+
 	menu .wrapper span {
-		margin: 1em 0;
-		padding: 1em 2em;
+		margin: var(--padding-section) 0;
+		padding: var(--padding-section) var(--padding-wide);
 		text-align: center;
 		width: 100%;
 	}
