@@ -17,7 +17,7 @@
 	--dark-color-background:     rgb(46, 46, 46);
 	--dark-color-panel:          rgb(32, 32, 32);
 	--dark-color-panel-button:   rgb(38, 38, 38);
-	--dark-color-button:         rgb(173,90,50);
+	--dark-color-button:         rgb(168, 80, 36);
 	--dark-color-border:         rgb(60, 60, 60);
 	--dark-color-grid-primary:   rgb(128, 128, 128);
 	--dark-color-grid-secondary: rgb(64, 64, 64);
@@ -26,14 +26,14 @@
 	--dark-color-heading:        rgb(239, 239, 239);
 	--dark-color-text:           rgb(239, 239, 239);
 	--dark-color-hovered:        rgb(46, 46, 46);
-	--dark-color-active:         rgb(38, 38, 38);
+	--dark-color-active:         rgb(100, 100, 100);
 
 	/*Light theme */
 
 	--light-color-background:     rgb(255, 255, 255);
 	--light-color-panel:          rgb(230, 230, 230);
 	--light-color-panel-button:   rgb(210, 210, 210);
-	--light-color-button:         rgb(173,90,50);
+	--light-color-button:         rgb(224, 116, 64);
 	--light-color-border:         rgb(60, 60, 60);
 	--light-color-grid-primary:   rgb(128, 128, 128);
 	--light-color-grid-secondary: rgb(164, 164, 164);
@@ -41,7 +41,7 @@
 	--light-color-title:          var(--orange);
 	--light-color-heading:        rgb(32, 32, 32);
 	--light-color-text:           rgb(16, 16, 16);
-	--light-color-hovered:        rgb(200, 200, 200);
+	--light-color-hovered:        rgb(180, 180, 180);
 	--light-color-active:         rgb(220, 220, 220);
 
 	/* Theme variables */
@@ -122,7 +122,7 @@ alert {
 }
 
 a {
-	color: var(--color-text);
+	color: var(--cyan);
 	font-family: var(--font-paragraph);
 	font-size: var(--font-size-paragraph);
 	text-decoration: none;
@@ -269,6 +269,10 @@ input[type = checkbox] {
 	width: var(--font-size-input);
 }
 
+input:hover {
+	background-color: var(--color-background);
+}
+
 input:focus {
 	border-color: var(--color-title);
 	outline: 0;
@@ -294,9 +298,17 @@ textarea {
 	width: 100%;
 }
 
+textarea:hover {
+	background-color: var(--color-background);
+}
+
 textarea:focus {
 	border-color: var(--color-title);
 	outline: 0;
+}
+
+menu a {
+	color: var(--color-text);
 }
 
 label {
@@ -453,7 +465,7 @@ table td{
 		flex-direction: row;
 	}
 
-	menu .wrapper span {
+	menu .wrapper nav {
 		margin: var(--padding-section) 0;
 		padding: var(--padding-section) var(--padding-wide);
 		text-align: center;

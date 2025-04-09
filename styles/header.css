@@ -37,7 +37,7 @@ header menu a:active {
 	background-color: var(--color-active);
 }
 
-header menu span {
+header menu nav {
 	align-items: center;
 	box-sizing: border-box;
 	margin: 1em 0;
