@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="ro">
 	<head>
+
+		<!-- DESCRIPTION -->
 		<title></title>
-
-    	<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions and geometry calculators.">
 
-		<script src="scripts/math.js"></script>
-		<script src="scripts/script.js"></script>
-		<script src="scripts/style.js"></script>
-		<script src="scripts/canvas2d.js"></script>
-		<script src="scripts/graphic.js"></script>
+		<!-- STYLES -->
+		<link rel="stylesheet" type="text/css" href="styles/utils/variables.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/utils/style.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/utils/panel.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/utils/mathSymbols.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/pages/graphic.css"/>
 
-		<link rel="stylesheet" type="text/css" href="styles/graphic.css"/>
+		<!-- SCRIPTS -->
+		<script src="scripts/extern/math.js"></script>
+		<script src="scripts/utils/mathExpressions.js"></script>
+		<script src="scripts/utils/title.js"></script>
+		<script src="scripts/utils/style.js"></script>
+		<script src="scripts/utils/userInterface.js"></script>
+		<script src="scripts/utils/canvas2d.js"></script>
+		<script src="scripts/pages/graphic.js"></script>
 	</head>
 	<body onload="loadProgram()" onkeydown="checkKeyDown(event)">
 		
@@ -29,14 +40,14 @@
 		<!-- SETTINGS -->
 		<div 
 			id="settings" 
-			class="right top panel" 
+			class="align-right align-top panel" 
 			onmousemove="updateMousePosition(event)" >
 			<section>
 				<button onclick="hideGui()">Ascunde interfata</button>
 				<button onclick="showFps()"id="ms"></button>
 				<button onclick="showMs()" id="fps"></button>
-				<button onclick="toggleSolveEquation()" id="solve-equation"> </button>
-				<button onclick="toggleFractionMode()" id="fraction-mode"> </button>
+				<button onclick="toggleSolveEquation()" id="solve-equation"></button>
+				<button onclick="toggleFractionMode()" id="fraction-mode"></button>
 				<button onclick="toggleTheme()" id="theme"> </button>
 			</section>
 		</div>
@@ -44,7 +55,7 @@
 		<!-- SHOW BUTTON -->
 		<div 
 			id="show" 
-			class="right top panel" 
+			class="align-right align-top panel" 
 			onmousemove="updateMousePosition(event)" >
 			<button onclick="showGui()">Afișează</button>
 		</div>
@@ -52,7 +63,7 @@
 		<!-- MOVE PANEL -->
 		<div 
 			id="move" 
-			class="right bottom panel" 
+			class="align-right align-bottom panel" 
 			onmousemove="updateMousePosition(event)" 
 			onmouseup="dragStop(event)"	>
 				<div>
@@ -80,7 +91,7 @@
 		<!-- FUNCTIONS -->
 		<div 
 			id="functions" 
-			class="left top panel" 
+			class="align-left align-top panel" 
 			onmousemove="updateMousePosition(event)" >
 			<table>
 				<tbody id="f-table"></tbody>
@@ -90,7 +101,7 @@
 		<!-- KEYBOARD -->
 		<div 
 			id="keyboard" 
-			class="left bottom panel" 
+			class="align-left align-bottom panel" 
 			onmousemove="updateMousePosition(event)" >
 			<div>
 
@@ -133,7 +144,7 @@
 						<button onclick="insertFunction(this)">ln</button>
 						<button onclick="insertInto('sigma(1, n, 1, x)')">Σ</button>
 						<button onclick="insertInto(getHtmlSqrt('x'))">
-							√<span class='radical' id="sqrt">x</span>
+							√<span class='math-symbol-radical' id="sqrt">x</span>
 						</button>
 					</span>
 					<span>
@@ -142,7 +153,7 @@
 						<button onclick="insertInto('log(x, a)')">log<sub>x</sub>a</button>
 						<button onclick="insertInto('pi(1, n, 1, x)')">П</button>
 						<button onclick="insertInto(getHtmlRadical('x', 3))">
-							<sup class='radical-order'>3</sup>√<span class='radical' id="radical">x</span>
+							<sup class='radical-order'>3</sup>√<span class='math-symbol-radical' id="radical">x</span>
 						</button>
 					</span>
 				</section>
@@ -223,52 +234,35 @@
 
 		<!-- TEMPLATE DOM FUNCTION -->
 		<table id="templateFunctionInput">
-			<tbody>
-				<tr>
-					<td>
-						<button id="remove" onclick="removeFunctionFromGui(this.style.order)">X</button>
-					</td>
-					<td>
-						<input id="input-color" type="color">
-					</td>
-					<td>
-						<div 
-							id="input-name" onfocus="inputSelected(event)" 
-							onfocusout="inputDeselected(event)" 
-							contenteditable="true">
-						</div>
-					</td>
-					<td>
-						(x)=
-					</td>
-					<td>
-						<div 
-							id="input-formula" 
-							onfocus="inputSelected(event,this.style.order)" 
-							onfocusout="inputDeselected(event)" 
-							contenteditable="true">							
-						</div>
-					</td>
-					<td>
-						<section id="result">
-							<label id="output-name"></label>
-							<label>(</label>
-							<div id="output-x" contenteditable="true" readonly></div>
-							<label>)=</label>
-							<div id="output-y" contenteditable="true" readonly></div>
-						</section>
-						<section id="equation">
-							<div id="equation-y" contenteditable="true" readonly></div>
-							<label>=</label>
-							<label id="equation-name"></label>
-							<label>(</label>
-							<div id="equation-x" contenteditable="true" readonly></div>
-							<label>)</label>
-						</section>
-						<alert></alert>
-					</td>
-				</tr>
-			</tbody>
+			<tr>
+				<td>
+					<button id="remove" onclick="removeFunctionFromGui(this.style.order)">X</button>
+				</td>
+				<td>
+					<input id="input-color" type="color">
+				</td>
+				<td>
+					<div 
+						id="input-name" onfocus="inputSelected(event)" 
+						onfocusout="inputDeselected(event)" 
+						contenteditable="true">
+					</div>
+				</td>
+				<td>
+					(x)=
+				</td>
+				<td>
+					<div 
+						id="input-formula" 
+						onfocus="inputSelected(event,this.style.order)" 
+						onfocusout="inputDeselected(event)" 
+						contenteditable="true">							
+					</div>
+				</td>
+				<td id="results">
+
+				</td>
+			</tr>
 		</table>
 
 	</body>

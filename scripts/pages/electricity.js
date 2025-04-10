@@ -1,12 +1,12 @@
 var interval;
 
 function loadProgram() {
-	setTitle("Geometrie");
+	setTitle("Electricitate");
 	
 	importCustom();
 	loadCanvas(getWidth(), getHeight());
 
-	interval = setInterval(loop, 1);
+	interval = setInterval(loop);
 }
 
 function loop() {
@@ -21,7 +21,6 @@ function loop() {
 function render() {
 	renderBackground();
 	renderAxis(getAxisWidth(), getLineColor());
-	renderAxisText(getGridPrimarySize(), getGridSecondarySize(), getFontParagraph(), getLineColor());
 }
 
 function update() {

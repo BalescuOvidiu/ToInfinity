@@ -1,34 +1,4 @@
-var interval;
-
-function loadProgram() {
-	setTitle("Electricitate");
-	
-	importCustom();
-	loadCanvas(getWidth(), getHeight());
-
-	interval = setInterval(loop, 1);
-}
-
-function loop() {
-	startTiming();
-
-	update();
-	render();
-
-	finishTiming();
-}
-
-function render() {
-	renderBackground();
-	renderAxis(getAxisWidth(), getLineColor());
-}
-
-function update() {
-	
-}
-
 /*
-
 bool readResistors(MAX,RESISTORS,string directory){
 	double value;
 	ifstream in(directory.c_str());

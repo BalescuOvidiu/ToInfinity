@@ -1,0 +1,13 @@
+.math-symbol-denominator {
+	border-top: var(--math-symbol-border);
+	justify-content: center;
+}
+
+.math-symbol-nominator {
+	justify-content: center;
+}
+
+.math-symbol-radical {
+	border-top: var(--radical-border);
+	justify-content: center;
+}

@@ -18,7 +18,7 @@ var unitLastFactor;
 var canvasMoveSpeed = 20;
 var canvasMoveSpeedFromButton = 20;
 
-var timeCanvasKeyPressed = 16;
+var timeCanvasKeyPressed = 8;
 var lastCanvasKeyPressed = 0;
 
 var beginTime = 0;
@@ -30,15 +30,24 @@ var fractionModeEnabled = false;
 var isAnInputSelected = false;
 var indexOfSelectedInput = 1;
 
+var gridPrimarySize = 100;
+var gridSecondarySize = 10;
+
+var axisWidth = 0.5;
+var gridWidth = 0.5;
+var lineWidth = 2;
+var pointRadius = 4;
+
 function loadCanvas(width, height) {
+	startTiming();
 	canvas = document.getElementById("canvas");
 
-	toDecimalsMode();
+	toDecimalMode();
 
 	reset();
 	loadContext(width, height);
-
 	lastCanvasKeyPressed = 0;
+	finishTiming();
 }
 
 function loadContext(width, height) {
@@ -179,8 +188,8 @@ function clear() {
 
 function renderBackground() {
 	clear();
-    renderGrids(getGridWidth(), getGridSecondarySize(), getGridSecondaryColor());
-    renderGrids(getGridWidth(), getGridPrimarySize(), getGridPrimaryColor());
+    renderGrids(gridWidth, gridSecondarySize, getGridSecondaryColor());
+    renderGrids(gridWidth, gridPrimarySize, getGridPrimaryColor());
 }
 
 function renderAxis(width, color) {
@@ -248,19 +257,6 @@ function zoom(event) {
 	else {
 		zoomIn();
 	}
-}
-
-function inputSelected(event, index) {
-	isAnInputSelected = true;
-	indexOfSelectedInput = index;
-}
-
-function inputSelected(event) {
-	isAnInputSelected = true;
-}
-
-function inputDeselected(event) {
-	isAnInputSelected = false;
 }
 
 function updateMousePosition(event) {
@@ -357,16 +353,8 @@ function getOriginY() {
 	return canvas.height / 2 + offsetY;
 }
 
-function getGridPrimarySize() {
-	return 100;
-}
-
-function getGridSecondarySize() {
-	return 10;
-}
-
 function getCurrentUnit() {
-	return unitSizeCurrent * getGridSecondarySize();
+	return unitSizeCurrent * gridSecondarySize;
 }
 
 function getMaxUnit() {
@@ -407,88 +395,4 @@ function yToGrid(y) {
 
 function yToCartezian(y) {
 	return (getOriginY() - y) / getCurrentUnit();
-}
-
-function showFps() {
-	document.getElementById("fps").style.display = "inline";
-	document.getElementById("ms").style.display = "none";
-}
-
-function showMs() {
-	document.getElementById("fps").style.display = "none";
-	document.getElementById("ms").style.display = "inline";
-}
-
-function toggleFractionMode() {
-	if(fractionModeEnabled) {
-		toDecimalsMode();
-	}
-	else {
-		toFractionMode();
-	}
-}
-
-function toFractionMode() {
-	fractionModeEnabled = true;
-	document.getElementById("fraction-mode").innerHTML = "0.5"; 
-
-}
-
-function toDecimalsMode() {
-	fractionModeEnabled = false;
-	document.getElementById("fraction-mode").innerHTML = getHtmlFraction(1, 1, 2);
-}
-
-function hideGui() {
-	try {
-		document.getElementById("keyboard").style.display = "none";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("move").style.display = "none";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("settings").style.display = "none";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("show").style.display = "flex";
-	}
-	catch(e) {
-		
-	}
-}
-
-function showGui() {
-	try {
-		document.getElementById("keyboard").style.display = "flex";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("move").style.display = "flex";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("settings").style.display = "flex";
-	}
-	catch(e) {
-		
-	}
-	try {
-		document.getElementById("show").style.display = "none";
-	}
-	catch(e) {
-		
-	}
 }

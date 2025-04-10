@@ -1,32 +1,3 @@
-function getTitle() {
-	return "To Infinity";
-}
-
-function setTitleHome() {
-	document.title = getTitle();
-	document.getElementById("title").innerHTML = getTitle();
-}
-
-function setTitle(subtitle) {
-	document.title = getTitle() + " - " + subtitle;
-}
-
-function getInputStartSelection(input) {
-	var position;
-
-    if (document.selection && document.selection.createRange) {
-        var range = document.selection.createRange();
-        var bookmark = range.getBookmark();
-        position = bookmark.charCodeAt(2) - 2;
-    }
-    else {
-        if (input.setSelectionRange)
-            position = input.selectionStart;
-    }
-
-    return position;
-}
-
 function isValidMathExpression(expresion){
 	const scope = {
 		x: 0
@@ -58,47 +29,50 @@ function formatAxis(n) {
 }
 
 function getHtmlSqrt(n) {
-	return "√<span class='radical'>" + n + "</span>";
+	return "√<span class='math-symbol-radical'>" + n + "</span>";
 }
 
 function getHtmlRadical(n, k) {
-	return "<sup>" + k + "</sup>√<span class='radical'>" + n + "</span>";
+	return "<sup>" + k + "</sup>√<span class='math-symbol-radical'>" + n + "</span>";
 }
 
 function getHtmlFraction(s, n, d) {
 	if(0 <= s) {
-		return "<span><section class='fraction-nominator'>" + n + "</section><section class='fraction-denominator'>" + d + "</section></span>";
+		return "<span><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
 	}
 
-	return "-<span><section class='fraction-nominator'>" + n + "</section><section class='fraction-denominator'>" + d + "</section></span>";
+	return "-<span><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
 }
 
 function fromHtmlToFormula(formula) {
-	formula=formula.replace(/<br>/gi,"");
+	if(formula) {
+		formula=formula.replace(/<br>/gi,"");
+	
+		formula=formula.replace(/!/g,"factorial");
+		formula=formula.replace(/•/g,"*");
+		formula=formula.replace(/π/g,"Pi");
+		formula=formula.replace(/γ/g,"0.577215664901532860606");
+		formula=formula.replace(/°/g," deg");
+		formula=formula.replace(/Σ/g,"sigma");
+		formula=formula.replace(/П/g,"produce");
 
-	formula=formula.replace(/!/g,"factorial");
-	formula=formula.replace(/•/g,"*");
-	formula=formula.replace(/π/g,"Pi");
-	formula=formula.replace(/γ/g,"0.577215664901532860606");
-	formula=formula.replace(/°/g," deg");
-	formula=formula.replace(/Σ/g,"sigma");
-	formula=formula.replace(/П/g,"produce");
+		formula=formula.replace(/<\/sup>/gi,")");
+		formula=formula.replace(/<sup>/gi,"^(");
 
-	formula=formula.replace(/<\/sup>/gi,")");
-	formula=formula.replace(/<sup>/gi,"^(");
+		formula=formula.replace(/<span><span class=\"math-symbol-nominator\">/gi,"((");
+		formula=formula.replace(/<\/span><span class=\"math-symbol-denominator\">/gi,")/(");
+		formula=formula.replace(/<\/span><\/span>/gi,"))");
 
-	formula=formula.replace(/<span><section class=\"nominator\">/gi,"((");
-	formula=formula.replace(/<\/section><section class=\"denominator\">/gi,")/(");
-	formula=formula.replace(/<\/section><\/span>/gi,"))");
+		formula=formula.replace(/√<span class='math-symbol-radical'>/g,"sqrt(");
+		formula=formula.replace(/<\/span><\/span>/gi,")");
 
-	formula=formula.replace(/√<section class='radical'>/g,"sqrt(");
-	formula=formula.replace(/<\/section><\/span>/gi,")");
+		formula=formula.replace(/[[]/g,"floor(");
+		formula=formula.replace(/]/g,")");
 
-	formula=formula.replace(/[[]/g,"floor(");
-	formula=formula.replace(/]/g,")");
-
-	formula=formula.replace(/{/g,"decimals(");
-	formula=formula.replace(/}/g,")");
+		formula=formula.replace(/{/g,"decimals(");
+		formula=formula.replace(/}/g,")");
+		formula=formula.replace(/mod/g,"%");
+	}
 
 	return formula;
 }

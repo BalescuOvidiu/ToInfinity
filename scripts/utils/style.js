@@ -73,27 +73,11 @@ function getFontSizeHeading() {
 }
 
 function getWidth() {
-	return Math.max(0 || document.documentElement.clientWidth, 0 || window.innerWidth);
+	return Math.max(document.documentElement.clientWidth, window.innerWidth);
 }
 
 function getHeight() {
-	return Math.max(0 || document.documentElement.clientHeight, 0 || window.innerHeight);
-}
-
-function getAxisWidth() {
-	return 0.5;
-}
-
-function getGridWidth() {
-	return 0.5;
-}
-
-function getLineWidth() {
-	return 2;
-}
-
-function getPointRadius() {
-	return 4;
+	return Math.max(document.documentElement.clientHeight, window.innerHeight);
 }
 
 function getNextColor() {
@@ -107,10 +91,6 @@ function getNextColor() {
 		"--purple"
 	];
 
-	var value = array[idColor];
-
-
-
 	if(array.length <  2 + idColor) {
 		idColor = 0;
 	}
@@ -118,7 +98,7 @@ function getNextColor() {
 		idColor++;
 	}
 
-	return getProperty(value);
+	return getProperty(array[idColor]);
 }
 
 function setProperty(property, value) {

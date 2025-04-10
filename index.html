@@ -2,47 +2,54 @@
 <html lang="ro">
 	<head>
 
+		<!-- DESCRIPTION -->
 		<title></title>
-
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name = "viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions 2dand geometry calculators.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions and geometry calculators.">
 
-		<link rel = "stylesheet" href = "styles/main.css">
+		<!-- STYLES -->
+		<link rel = "stylesheet" href = "styles/utils/variables.css">
+		<link rel = "stylesheet" href = "styles/utils/style.css">
+		<link rel = "stylesheet" href = "styles/utils/header.css">
+		<link rel = "stylesheet" href = "styles/utils/footer.css">
+		<link rel = "stylesheet" href = "styles/pages/index.css">
 
-		<script src="scripts/script.js"></script>
-		<script src="scripts/style.js"></script>
-		<script src="scripts/message.js"></script>
+		<!-- SCRIPTS -->
+		<script src="scripts/utils/title.js"></script>
+		<script src="scripts/pages/index.js"></script>
+		<script src="scripts/utils/style.js"></script>
+		<script src="scripts/utils/message.js"></script>
 
 	</head>
 	<body onload="setTitleHome()">
 
 		<!-- HEADER -->
-		<header class="wrapper">
+		<header class="container">
 
 			<!-- LOGO -->
-			<span class="wrapper left">
-					<button onclick="toggleTheme()">
-						<h1 id="title"></h1>
-					</button>
+			<span class="container align-left">
+				<button onclick="toggleTheme()">
+					<h1 id="title"></h1>
+				</button>
 			</span>
 
 			<!-- MENU -->
-			<menu class="wrapper">
-				<section class="wrapper">
-					<a class="wrapper" href="graphic.html">
+			<menu class="container">
+				<section class="container">
+					<a class="container" href="graphic.html">
 						<nav class="bordered">Grafice</nav>
 					</a>
-					<a class="wrapper" href="graphs.html">
+					<a class="container" href="graphs.html">
 						<nav class="bordered">Grafuri</nav>
 					</a>
 				</section>
-				<section class="wrapper">
-					<a class="wrapper" href="geometry.html">
+				<section class="container">
+					<a class="container" href="geometry.html">
 						<nav class="bordered">Geometrie</nav>
 					</a>
-					<a class="wrapper" href="electricity.html">
+					<a class="container" href="electricity.html">
 						<nav class="bordered">Electricitate</nav>
 					</a>
 				</section>
@@ -51,10 +58,10 @@
 		</header>
 
 		<!-- MAIN -->
-		<main class="wrapper">
+		<main class="container">
 			<img src="images/graphic.avif" alt="">
-			<div class="wrapper-over">
-				<h1 id="text-over-image">
+			<div class="container-over">
+				<h1 class="text-over-image">
 					Desenator pentru grafice matematice: rapid, eficient și simplu.
 				</h1>
 			</div>
@@ -64,10 +71,10 @@
 		<footer>
 
 			<!-- FIRST PART -->
-			<div class="wrapper">
+			<div class="container">
 
 				<!-- CONTACT -->
-				<section class="wrapper-content half-width contact">
+				<section class="container-padded container-half contact">
 					<h2>Contact</h2>
 					<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj aici sau la adresa de mail <a href="mailto:balescuovidiu@gmail.com" target="_blank">balescuovidiu@gmail.com</a></p>
 					<input type="text" id="contact-name" placeholder="Nume"/>
@@ -86,7 +93,7 @@
 				</section>
 
 				<!-- ABOUT PROJECT -->
-				<section class="wrapper-content half-width description">
+				<section class="container-padded container-half description">
 					<div class="bordered">
 
 						<!-- DESCRIPTION -->
@@ -119,8 +126,8 @@
 			</div>
 
 			<!-- CONTENTS -->
-			<div class="wrapper showcase">
-				<section class="wrapper-content results">
+			<div class="container showcase">
+				<section class="container-padded results">
 					<h2>Concursuri</h2>
 					<p>Această platformă a fost calificată pentru faza națională la concursurile InfoEducație și GREPIT, anul 2016.</p>
 					<div>
@@ -135,8 +142,8 @@
 			</div>
 
 			<!-- USED TECHNOLOGIES -->
-			<div class="wrapper showcase">
-				<section class="wrapper-content used-technologies">
+			<div class="container showcase">
+				<section class="container-padded used-technologies">
 
 					<!-- PROGRAMMING -->
 					<h2>Tehnologii folosite</h2>
@@ -176,8 +183,8 @@
 			</div>
 
 			<!-- COPYRIGHT -->
-			<div class="wrapper">
-				<section class="wrapper-content copyright">
+			<div class="container">
+				<section class="container-padded copyright">
 					<h4>Copyright © 2016 - 2025 Bălescu Ovidiu-Gheorghe</h4>
 				</section>
 			</div>

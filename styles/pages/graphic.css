@@ -1,17 +1,6 @@
-@import "panel.css";
-
-#f-table #input-formula {
-	margin-right: var(--margin-wide);
-}
-
 #f-table button {
-	height: var(--height-button-small);
-	min-width: var(--height-button-small);
-}
-
-#f-table #input-color {
-	height: var(--height-button-small);
-	min-width: var(--height-button-small);
+	height: var(--height-small);
+	min-width: var(--height-small);
 }
 
 #keyboard #menu {
@@ -31,6 +20,24 @@
 	margin: 0;
 }
 
+#input-formula {
+	min-width: var(--space-wide);
+	min-height: var(--margin-medium);
+}
+
+#input-name {
+	justify-content: flex-end;
+}
+
+#input-color {
+	height: var(--height-small);
+	min-width: var(--height-small);
+}
+
+#results {
+	padding-left: var(--margin-wide);
+}
+
 #templateFunctionInput {
 	display: none;
 }
@@ -43,10 +50,13 @@
 	#keyboard span {
 		display: block;
 	}
-	#settings {
+	#move {
+		bottom: initial;
+	}
+	#results {
 		display: none;
 	}
-	#move {
+	#settings {
 		display: none;
 	}
 }

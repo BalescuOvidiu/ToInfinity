@@ -1,5 +1,3 @@
-@import "header.css";
-
 footer a:hover {
 	opacity: 0.5;
 }
@@ -25,7 +23,7 @@ footer .copyright {
 
 footer .description img {
 	margin-right: var(--margin-section);
-	height: var(--height-button-small);
+	height: var(--height-small);
 	width: auto;
 }
 
@@ -49,7 +47,7 @@ footer .showcase p {
 
 footer .showcase img {
 	margin: var(--padding-wide);
-	height: var(--height-button-big);
+	height: var(--height-big);
 	width: auto;
 }
 

@@ -1,5 +1,3 @@
-
-
 function sendMessage(name, email, message) {
 	return true;
 }
