@@ -4,8 +4,8 @@
 }
 
 a {
-	color: var(--blue);
-	text-decoration: none;
+	color: var(--color-text);
+	text-decoration: underline;
 }
 
 body {

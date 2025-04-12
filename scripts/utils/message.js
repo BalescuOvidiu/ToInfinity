@@ -41,7 +41,6 @@ function sendContactMessage() {
 
 	send = verifyContactMessage(name, email, message, responseObjectId);
 	news = false;
-	console.log(document.getElementById("contact-newsletter").checked);
 	if(newsletter) {
 		news = addNewsletter(email);
 	}

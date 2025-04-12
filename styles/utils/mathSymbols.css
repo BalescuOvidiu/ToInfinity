@@ -1,10 +1,17 @@
+.fraction {
+	display: inline-flex;
+	margin: 0 var(--space-tiny);
+}
+
 .math-symbol-denominator {
 	border-top: var(--math-symbol-border);
 	justify-content: center;
+	text-align: center;
 }
 
 .math-symbol-nominator {
 	justify-content: center;
+	text-align: center;
 }
 
 .math-symbol-radical {

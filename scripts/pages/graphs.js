@@ -21,7 +21,7 @@ function loop() {
 
 function render() {
 	renderBackground();
-	renderAxis(getAxisWidth(), getLineColor());
+	renderAxis(axisWidth, getLineColor());
 }
 
 function update() {

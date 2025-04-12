@@ -74,7 +74,15 @@ canvas {
 	outline: 0;
 }
 
-#fps {
+#fraction-mode {
+	width: var(--height-medium);
+}
+
+#ms {
+	display: none;
+}
+
+#ms #fps {
 	width: var(--space-wide);	
 }
 
@@ -87,10 +95,6 @@ canvas {
 	display: none;
 }
 
-#settings #theme {
+#theme {
 	background-color: var(--color-text);
-}
-
-#settings #ms {
-	display: none;
 }

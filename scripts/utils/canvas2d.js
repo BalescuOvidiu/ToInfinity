@@ -21,14 +21,9 @@ var canvasMoveSpeedFromButton = 20;
 var timeCanvasKeyPressed = 8;
 var lastCanvasKeyPressed = 0;
 
-var beginTime = 0;
-var timeFpsShow = 1000;
-var lastFpsShow = 0;
-
 var fractionModeEnabled = false;
 
 var isAnInputSelected = false;
-var indexOfSelectedInput = 1;
 
 var gridPrimarySize = 100;
 var gridSecondarySize = 10;
@@ -37,6 +32,9 @@ var axisWidth = 0.5;
 var gridWidth = 0.5;
 var lineWidth = 2;
 var pointRadius = 4;
+
+var maxUnit = 200000000;
+var minUnit = 2.0000000000000003e-14;
 
 function loadCanvas(width, height) {
 	startTiming();
@@ -54,20 +52,6 @@ function loadContext(width, height) {
 	canvas.width = width;
 	canvas.height = height;
 	context = canvas.getContext("2d");
-}
-
-function startTiming() {
-	beginTime = performance.now();
-}
-
-function finishTiming() {
-	if(timePast(timeFpsShow, lastFpsShow)) {
-		var updateTime = performance.now() - beginTime;
-
-		document.getElementById("ms").innerHTML = Math.floor(updateTime) + " ms";
-		document.getElementById("fps").innerHTML = Math.floor(1000 / updateTime) + " fps";
-		lastFpsShow = performance.now();
-	}
 }
 
 function moveLeft(distance) {
@@ -109,7 +93,7 @@ function moveDown(distance) {
 function zoomOut() {
 	var previous = unitLastFactor;
 
-	if(getMinUnit() < unitSizeCurrent) {
+	if(minUnit < unitSizeCurrent) {
 		switch(unitLastFactor) {
 			case 1:
 				unitLastFactor = 5;
@@ -139,7 +123,7 @@ function zoomOut() {
 function zoomIn() {
 	var previous = unitLastFactor;
 
-	if(getMaxUnit() > unitSizeCurrent) {
+	if(maxUnit > unitSizeCurrent) {
 		switch(unitLastFactor) {
 			case 1:
 				unitLastFactor = 2;
@@ -355,14 +339,6 @@ function getOriginY() {
 
 function getCurrentUnit() {
 	return unitSizeCurrent * gridSecondarySize;
-}
-
-function getMaxUnit() {
-	return 200000000;
-}
-
-function getMinUnit() {
-	return 2.0000000000000003e-14;
 }
 
 function getRatio() {

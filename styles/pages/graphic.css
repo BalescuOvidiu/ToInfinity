@@ -21,8 +21,13 @@
 }
 
 #input-formula {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 	min-width: var(--space-wide);
 	min-height: var(--margin-medium);
+	vertical-align: middle;
 }
 
 #input-name {
@@ -35,7 +40,14 @@
 }
 
 #results {
-	padding-left: var(--margin-wide);
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding-left: var(--space-medium);
+	padding-top: var(--space-small);
+	padding-bottom: var(--space-small);
+	vertical-align: middle;
 }
 
 #templateFunctionInput {

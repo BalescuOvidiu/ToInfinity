@@ -1,3 +1,6 @@
+var resultFunctionString = "{0}({1}) = {2}";
+var equationFunctionString = "{2} = {0}({1})";
+
 function isValidMathExpression(expresion){
 	const scope = {
 		x: 0
@@ -38,10 +41,10 @@ function getHtmlRadical(n, k) {
 
 function getHtmlFraction(s, n, d) {
 	if(0 <= s) {
-		return "<span><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
+		return "<span class='fraction'><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
 	}
 
-	return "-<span><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
+	return "-<span class='fraction'><span class='math-symbol-nominator'>" + n + "</span><span class='math-symbol-denominator'>" + d + "</span></span>";
 }
 
 function fromHtmlToFormula(formula) {
@@ -56,15 +59,17 @@ function fromHtmlToFormula(formula) {
 		formula=formula.replace(/Σ/g,"sigma");
 		formula=formula.replace(/П/g,"produce");
 
-		formula=formula.replace(/<\/sup>/gi,")");
 		formula=formula.replace(/<sup>/gi,"^(");
+		formula=formula.replace(/<\/sup>/gi,")");
 
-		formula=formula.replace(/<span><span class=\"math-symbol-nominator\">/gi,"((");
+		formula=formula.replace(/<span class=\"fraction\">/gi,"(");
+
+		formula=formula.replace(/<span class=\"math-symbol-nominator\">/gi,"(");
 		formula=formula.replace(/<\/span><span class=\"math-symbol-denominator\">/gi,")/(");
-		formula=formula.replace(/<\/span><\/span>/gi,"))");
 
 		formula=formula.replace(/√<span class='math-symbol-radical'>/g,"sqrt(");
-		formula=formula.replace(/<\/span><\/span>/gi,")");
+
+		formula=formula.replace(/<\/span>/gi,")");
 
 		formula=formula.replace(/[[]/g,"floor(");
 		formula=formula.replace(/]/g,")");
@@ -118,10 +123,6 @@ function getAngle2Points2dRadians(x1, y1, x2, y2) {
 
 function getAngle3Points2dRadians(x1, y1, x2, y2, x3, y3) {
 	return getAngle2Points2dRadians(x2 - x1, y2 - y1, x3 - x2, y3 - y2);
-}
-
-function timePast(time, last) {
-	return (performance.now() > time + last);
 }
 
 function importCustom() {

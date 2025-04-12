@@ -13,9 +13,7 @@ var resolutionOutput = 2;
 var resolutionInput = 0.5;
 var maxAngleDeviation = 1.222;
 
-var resultFunctionString = "{0}({1}) = {2}";
-var equationFunctionString = "{2} = {0}({1})";
-
+var indexOfSelectedInput = 0;
 var functions;
 
 function loadProgram() {
@@ -363,6 +361,10 @@ function insertInto(theHtmlCode) {
 	if(indexOfSelectedInput < functionsNumber) {
 		functions[indexOfSelectedInput]["input-formula"].innerHTML += theHtmlCode;
 	}
+}
+
+function insert(element) {
+    insertInto(element.innerHTML);
 }
 
 function clearInput() {

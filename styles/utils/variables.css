@@ -1,5 +1,52 @@
 :root {
 
+	/* Sizing variables */
+
+	--space-micro: 0.1rem;
+	--space-tiny:  0.2rem;
+	--space-mini:  0.3rem;
+	--space-small: 0.5rem;
+	--space-medium:  1rem;
+	--space-big:     2rem;
+	--space-large:   3rem;
+	--space-huge:    4rem;
+	--space-wide:    5rem;
+
+	--padding-list: 1.5rem;
+
+	--margin-small:  0.1rem;
+	--margin-medium: 0.2rem;
+	--margin-big:    0.5rem;
+	--margin-section:  1rem;
+	--margin-wide:     2rem;
+
+	--padding-small:  0.1rem;
+	--padding-medium: 0.2rem;
+	--padding-big:    0.5rem;
+	--padding-section:  1rem;
+	--padding-wide:     2rem;
+
+	--height-small:  2rem;
+	--height-medium: 3rem;
+	--height-big:    4rem;
+
+	/* Font variables */
+
+	--font-size-button:    1rem;
+	--font-size-input:     1rem;
+	--font-size-paragraph: 1rem;
+	--font-size-h1: calc(2.00 * var(--font-size-paragraph));
+	--font-size-h2: calc(1.50 * var(--font-size-paragraph));
+	--font-size-h3: calc(1.17 * var(--font-size-paragraph));
+	--font-size-h4: calc(1.05 * var(--font-size-paragraph));
+	--font-size-h5: calc(0.85 * var(--font-size-paragraph));
+	--font-size-h6: calc(0.67 * var(--font-size-paragraph));
+
+	--font-button:    Verdana;
+	--font-input:     Verdana;
+	--font-paragraph: Verdana;
+	--font-heading:   Arial;
+
 	/* Color variables */
 
 	--red:       #e03921;
@@ -63,54 +110,8 @@
 	/* Border variables */
 
 	--default-border:   1px solid var(--color-border);
-	--math-symbol-border:  1px solid var(--color-text);
+	--math-symbol-border:  2px solid var(--color-text);
 	--radical-border: 0.5px solid var(--color-text);
-
-	/* Sizing variables */
-
-	--space-micro: 0.1rem;
-	--space-tiny:  0.2rem;
-	--space-small: 0.5rem;
-	--space-medium:  1rem;
-	--space-big:     2rem;
-	--space-large:   3rem;
-	--space-huge:    4rem;
-	--space-wide:    5rem;
-
-	--padding-list: 1.5rem;
-
-	--margin-small:  0.1rem;
-	--margin-medium: 0.2rem;
-	--margin-big:    0.5rem;
-	--margin-section:  1rem;
-	--margin-wide:     2rem;
-
-	--padding-small:  0.1rem;
-	--padding-medium: 0.2rem;
-	--padding-big:    0.5rem;
-	--padding-section:  1rem;
-	--padding-wide:     2rem;
-
-	--height-small:  2rem;
-	--height-medium: 3rem;
-	--height-big:    4rem;
-
-	/* Font variables */
-
-	--font-button:    Verdana;
-	--font-input:     Verdana;
-	--font-paragraph: Verdana;
-	--font-heading:   Arial;
-
-	--font-size-button:    1rem;
-	--font-size-input:     1rem;
-	--font-size-paragraph: 1rem;
-	--font-size-h1: calc(2.00 * var(--font-size-paragraph));
-	--font-size-h2: calc(1.50 * var(--font-size-paragraph));
-	--font-size-h3: calc(1.17 * var(--font-size-paragraph));
-	--font-size-h4: calc(1.05 * var(--font-size-paragraph));
-	--font-size-h5: calc(0.85 * var(--font-size-paragraph));
-	--font-size-h6: calc(0.67 * var(--font-size-paragraph));
 }
 
 @media only screen and (max-width: 900px) {

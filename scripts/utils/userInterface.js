@@ -34,10 +34,6 @@ function showHtmlById(id) {
     }
 }
 
-function insert(element) {
-    insertInto(element.innerHTML);
-}
-
 function getInputStartSelection(input) {
 	var position;
 
@@ -88,7 +84,7 @@ function toggleFractionMode() {
 
 function toFractionMode() {
     fractionModeEnabled = true;
-    updateHtmlById("fraction-mode", "0.5");
+    updateHtmlById("fraction-mode", getHtmlFraction(1, 1, 2));
     updateHtmlById("multiply", "•");
     updateHtmlById("division", getHtmlFraction(1, 1, "x"));
 }
