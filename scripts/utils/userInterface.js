@@ -7,6 +7,17 @@ String.prototype.format = function() {
     return formatted;
 };
 
+function getIndex(list, index, change) {
+    index += change;
+    if(0 > index) {
+        index = list.length - 1;
+    }
+    else if(index + 1 > list.length) {
+        index = 0;
+    }
+    return index;
+}
+
 function updateHtmlById(id, newHtml) {
     try {
         document.getElementById(id).innerHTML = newHtml;
@@ -16,18 +27,9 @@ function updateHtmlById(id, newHtml) {
     }
 }
 
-function hideHtmlById(id) {
+function displayHtmlById(id, display) {
     try {
-        document.getElementById(id).style.display = "none";
-    }
-    catch(e) {
-        
-    }
-}
-
-function showHtmlById(id) {
-    try {
-        document.getElementById(id).style.display = "flex";
+        document.getElementById(id).style.display = display;
     }
     catch(e) {
         
@@ -50,17 +52,17 @@ function getInputStartSelection(input) {
     return position;
 }
 
-function inputSelected(event, index) {
-    isAnInputSelected = true;
-    indexOfSelectedInput = index;
+function inputDeselected(event) {
+    isAnInputSelected = false;
 }
 
 function inputSelected(event) {
     isAnInputSelected = true;
 }
 
-function inputDeselected(event) {
-    isAnInputSelected = false;
+function inputSelectedByIndex(event, index) {
+    inputSelected(event);
+    indexOfSelectedInput = parseInt(index);
 }
 
 function showFps() {
@@ -97,15 +99,35 @@ function toDecimalMode() {
 }
 
 function hideGui() {
-    hideHtmlById("keyboard");
-    hideHtmlById("move");
-    hideHtmlById("settings");
-    showHtmlById("show");
+    displayHtmlById("show", "flex");
+
+    displayHtmlById("keyboard", "none");
+    displayHtmlById("move", "none");
+    displayHtmlById("settings", "none");
+
+    removeButtons = document.querySelectorAll("#remove");
+    for(var index = 0; index < removeButtons.length; index++) {
+        removeButtons[index].style.display = "none";
+    }
+    lastFunction = document.querySelector("#f-table tr:last-child");
+    if(lastFunction) {
+        lastFunction.style.display = "none";
+    }
 }
 
 function showGui() {
-    showHtmlById("keyboard");
-    showHtmlById("move");
-    showHtmlById("settings");
-    hideHtmlById("show");
+    displayHtmlById("show", "none");
+
+    displayHtmlById("keyboard", "flex");
+    displayHtmlById("move", "flex");
+    displayHtmlById("settings", "flex");
+
+    removeButtons = document.querySelectorAll("#remove");
+    for(var index = 0; index < removeButtons.length; index++) {
+        removeButtons[index].style.display = "inline";
+    }
+    lastFunction = document.querySelector("#f-table tr:last-child");
+    if(lastFunction) {
+        lastFunction.style.display = "table-row";        
+    }
 }

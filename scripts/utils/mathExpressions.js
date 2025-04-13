@@ -48,36 +48,34 @@ function getHtmlFraction(s, n, d) {
 }
 
 function fromHtmlToFormula(formula) {
-	if(formula) {
-		formula=formula.replace(/<br>/gi,"");
-	
-		formula=formula.replace(/!/g,"factorial");
-		formula=formula.replace(/•/g,"*");
-		formula=formula.replace(/π/g,"Pi");
-		formula=formula.replace(/γ/g,"0.577215664901532860606");
-		formula=formula.replace(/°/g," deg");
-		formula=formula.replace(/Σ/g,"sigma");
-		formula=formula.replace(/П/g,"produce");
+	formula=formula.replace(/<br>/gi,"");
 
-		formula=formula.replace(/<sup>/gi,"^(");
-		formula=formula.replace(/<\/sup>/gi,")");
+	formula=formula.replace(/!/g,"factorial");
+	formula=formula.replace(/•/g,"*");
+	formula=formula.replace(/π/g,"Pi");
+	formula=formula.replace(/γ/g,"0.577215664901532860606");
+	formula=formula.replace(/°/g," deg");
+	formula=formula.replace(/Σ/g,"sigma");
+	formula=formula.replace(/П/g,"produce");
 
-		formula=formula.replace(/<span class=\"fraction\">/gi,"(");
+	formula=formula.replace(/<sup>/gi,"^(");
+	formula=formula.replace(/<\/sup>/gi,")");
 
-		formula=formula.replace(/<span class=\"math-symbol-nominator\">/gi,"(");
-		formula=formula.replace(/<\/span><span class=\"math-symbol-denominator\">/gi,")/(");
+	formula=formula.replace(/<span class=\"fraction\">/gi,"(");
 
-		formula=formula.replace(/√<span class='math-symbol-radical'>/g,"sqrt(");
+	formula=formula.replace(/<span class=\"math-symbol-nominator\">/gi,"(");
+	formula=formula.replace(/<\/span><span class=\"math-symbol-denominator\">/gi,")/(");
 
-		formula=formula.replace(/<\/span>/gi,")");
+	formula=formula.replace(/√<span class=\"math-symbol-radical\">/g,"sqrt(");
 
-		formula=formula.replace(/[[]/g,"floor(");
-		formula=formula.replace(/]/g,")");
+	formula=formula.replace(/<\/span>/gi,")");
 
-		formula=formula.replace(/{/g,"decimals(");
-		formula=formula.replace(/}/g,")");
-		formula=formula.replace(/mod/g,"%");
-	}
+	formula=formula.replace(/[[]/g,"floor(");
+	formula=formula.replace(/]/g,")");
+
+	formula=formula.replace(/{/g,"decimals(");
+	formula=formula.replace(/}/g,")");
+	formula=formula.replace(/mod/g,"%");
 
 	return formula;
 }

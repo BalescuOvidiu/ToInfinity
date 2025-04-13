@@ -21,7 +21,7 @@ function loop() {
 function render() {
 	renderBackground();
 	renderAxis(axisWidth, getLineColor());
-	renderAxisText(getGridPrimarySize(), getGridSecondarySize(), getFontParagraph(), getLineColor());
+	renderAxisText(gridPrimarySize, gridSecondarySize, getFontParagraph(), getLineColor());
 }
 
 function update() {

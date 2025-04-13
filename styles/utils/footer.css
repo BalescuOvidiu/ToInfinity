@@ -1,12 +1,12 @@
-footer a {
+p a {
 	text-decoration: underline;
 }
 
-footer a:hover {
+p a:hover {
 	color: var(--blue);
 }
 
-footer img:hover {
+a img:hover {
 	opacity: 0.5;
 }
 
@@ -20,8 +20,8 @@ footer section h2 {
 }
 
 footer .bordered {
-	margin-left: calc(-1 * var(--padding-section));
-	padding-left: var(--padding-section);
+	margin-left: calc(-1 * var(--space-medium));
+	padding-left: var(--space-medium);
 }
 
 footer .copyright {
@@ -29,33 +29,31 @@ footer .copyright {
 	text-align: center;
 }
 
-footer .description img {
-	margin-right: var(--margin-section);
-	height: var(--height-small);
-	width: auto;
-}
-
 footer .results {
 	background-color: var(--color-background);
 }
 
-footer .showcase {
+.showcase {
 	justify-content: center;
 	text-align: center;
 }
 
-footer .showcase h2 {
+.showcase a {
+	text-decoration: none;
+}
+
+.showcase h2 {
 	color: var(--color-text);
 }
 
-footer .showcase p {
+.showcase p {
 	margin: auto;
 	width: 40%;
 }
 
-footer .showcase img {
-	margin: var(--padding-wide);
-	height: var(--height-big);
+.showcase img {
+	margin: var(--space-big);
+	height: var(--space-huge);
 	width: auto;
 }
 
@@ -65,11 +63,11 @@ footer .showcase img {
 		padding-left: 0;
 	}
 
-	footer .showcase p {
-		width: 80%;
-	}
-
 	footer .used-technologies img {
 		width: auto;
+	}
+
+	.showcase p {
+		width: 80%;
 	}
 }

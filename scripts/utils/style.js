@@ -1,4 +1,13 @@
-var idColor = 0;
+var colors = [
+	getProperty("--orange"),
+	getProperty("--yellow"),
+	getProperty("--green"),
+	getProperty("--cyan"),
+	getProperty("--blue"),
+	getProperty("--purple"),
+	getProperty("--red")
+];
+var idLastGivenColor = 0;
 
 function getProperty(property) {
 	return getComputedStyle(document.querySelector(":root")).getPropertyValue(property);
@@ -81,24 +90,17 @@ function getHeight() {
 }
 
 function getNextColor() {
-	var array = [
-		"--red",
-		"--orange",
-		"--yellow",
-		"--green",
-		"--cyan",
-		"--blue",
-		"--purple"
-	];
+	var value = colors[idLastGivenColor];
+    idLastGivenColor = getIndex(colors, idLastGivenColor, 1);
 
-	if(array.length <  2 + idColor) {
-		idColor = 0;
-	}
-	else {
-		idColor++;
-	}
+	return value;
+}
 
-	return getProperty(array[idColor]);
+function getPreviousColor() {
+	var value = colors[idLastGivenColor];
+    idLastGivenColor = getIndex(colors, idLastGivenColor, -1);
+
+	return value;
 }
 
 function setProperty(property, value) {

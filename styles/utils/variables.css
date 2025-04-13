@@ -14,22 +14,6 @@
 
 	--padding-list: 1.5rem;
 
-	--margin-small:  0.1rem;
-	--margin-medium: 0.2rem;
-	--margin-big:    0.5rem;
-	--margin-section:  1rem;
-	--margin-wide:     2rem;
-
-	--padding-small:  0.1rem;
-	--padding-medium: 0.2rem;
-	--padding-big:    0.5rem;
-	--padding-section:  1rem;
-	--padding-wide:     2rem;
-
-	--height-small:  2rem;
-	--height-medium: 3rem;
-	--height-big:    4rem;
-
 	/* Font variables */
 
 	--font-size-button:    1rem;
@@ -49,13 +33,13 @@
 
 	/* Color variables */
 
-	--red:       #e03921;
 	--orange:    #e07440;
 	--yellow:    #d9a925;
 	--green:     #249b4e;
 	--cyan:      #13a2d6;
 	--blue:      #4493f8;
 	--purple:    #c62f94;
+	--red:       #e03921;
 	--gray:      rgb(46, 46, 46);
 	--dark-gray: rgb(32, 32, 32);
 
@@ -110,6 +94,7 @@
 	/* Border variables */
 
 	--default-border:   1px solid var(--color-border);
+	--link-border:   1px solid var(--color-text);
 	--math-symbol-border:  2px solid var(--color-text);
 	--radical-border: 0.5px solid var(--color-text);
 }
@@ -120,9 +105,9 @@
 		--font-size-input:     0.9rem;
 		--font-size-paragraph: 0.85rem;
 
-		--height-small:  1.8rem;
-		--height-medium: 2.5rem;
-		--height-big:    3.2rem;
+		--space-big:  1.8rem;
+		--space-large: 2.5rem;
+		--space-huge:    3.2rem;
 
 	    --padding-list: 1rem;
 	}

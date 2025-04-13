@@ -13,34 +13,33 @@ canvas {
 
 .panel {
 	background-color: var(--color-panel);
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	font-weight: normal;
-	font-style: normal;
-	font-size: var(--font-size-paragraph);
+	padding: var(--space-tiny);
+	position: absolute;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-	position: absolute;
 	z-index: 2;
-	padding: var(--padding-medium);
 }
 
 .panel div {
 	display: flex;
   	justify-content: flex-start;
+	flex-direction: row;
 	outline: 0;
 	padding: 0;
 }
 
 .panel section {
-	display: flex;
-	flex-direction: row;
+	display: inline-flex;
+	flex-direction: column;
 	flex-wrap: nowrap;
-	padding: var(--padding-medium);
+	padding: var(--space-tiny);
 }
 
 .panel span {
@@ -51,9 +50,9 @@ canvas {
 
 .panel button {
 	background-color: var(--color-panel-button);
-	height: var(--height-medium);
-	margin: var(--margin-small);
-	padding: var(--padding-medium);
+	height: var(--space-large);
+	margin: var(--space-micro);
+	padding: var(--space-tiny);
 	outline: 0;	
 }
 
@@ -68,27 +67,34 @@ canvas {
 
 .panel input {
 	border: none;
-	height: var(--height-medium);
-	margin: var(--margin-small);
-	padding: var(--padding-medium);
+	height: var(--space-large);
+	margin: var(--space-micro);
+	padding: var(--space-tiny);
 	outline: 0;
 }
 
+.scrollable {	
+	overflow-y: auto;
+	scrollbar-color: var(--color-background) var(--color-panel);
+	scroll-padding: var(--space-micro);
+	scrollbar-width: thin;
+}
+
 #fraction-mode {
-	width: var(--height-medium);
+	width: var(--space-large);
 }
 
 #ms {
 	display: none;
 }
 
-#ms #fps {
+#ms, #fps {
 	width: var(--space-wide);	
 }
 
 #move button {
-	height: var(--height-small);
-	min-width: var(--height-small);
+	height: var(--space-big);
+	min-width: var(--space-big);
 }
 
 #show {

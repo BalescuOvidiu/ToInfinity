@@ -5,7 +5,20 @@
 
 a {
 	color: var(--color-text);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a img:hover {
+	opacity: 0.5;
+}
+
+p a {
 	text-decoration: underline;
+}
+
+p a:hover {
+	color: var(--blue);
 }
 
 body {
@@ -25,10 +38,10 @@ button {
 	display: inline;
 	font-family: var(--font-button);
 	font-size: var(--font-size-button);
-	height: var(--height-medium);
-	margin: var(--margin-big) var(--margin-big) var(--margin-big) 0;
-	min-width: var(--height-medium);
-	padding: var(--padding-big);
+	height: var(--space-large);
+	margin: var(--space-small) var(--space-small) var(--space-small) 0;
+	min-width: var(--space-large);
+	padding: var(--space-small);
 }
 
 button:active {
@@ -70,7 +83,7 @@ h6 {
 }
 
 li {
-	margin-bottom: var(--margin-big);
+	margin-bottom: var(--space-small);
 }
 
 input, textarea {
@@ -80,8 +93,8 @@ input, textarea {
 	color: var(--color-text);
 	font-size: var(--font-size-input);
 	font-family: var(--font-input);
-	margin: var(--margin-big) var(--margin-big) var(--margin-big) 0;
-	padding: var(--padding-big);
+	margin: var(--space-small) var(--space-small) var(--space-small) 0;
+	padding: var(--space-small);
 	width: 100%;
 }
 
@@ -96,7 +109,7 @@ input[type = text] {
 
 input[type = color] {
 	cursor: pointer;
-	width: var(--height-small);
+	width: var(--space-big);
 }
 
 input[type = checkbox] {
@@ -160,7 +173,7 @@ table {
 .container-padded {
     box-sizing: border-box;
 	display: block;
-	padding: var(--padding-section);
+	padding: var(--space-medium);
 }
 
 .container-half {
@@ -185,7 +198,7 @@ table {
 
 @media only screen and (max-width: 900px) {
 	menu section {
-		padding: 0 var(--padding-section);
+		padding: 0 var(--space-medium);
 	}
 
 	menu a {
@@ -205,8 +218,8 @@ table {
 	}
 
 	nav {
-		margin: var(--padding-section) 0;
-		padding: var(--padding-section) var(--padding-wide);
+		margin: var(--space-medium) 0;
+		padding: var(--space-medium) var(--space-big);
 		text-align: center;
 		width: 100%;
 	}

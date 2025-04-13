@@ -1,19 +1,26 @@
+#functions {
+	max-height: 40%;
+}
+
 #f-table button {
-	height: var(--height-small);
-	min-width: var(--height-small);
+	height: var(--space-big);
+	min-width: var(--space-big);
 }
 
-#keyboard #menu {
-	flex-basis: 100%;
+#f-table td {
+	vertical-align: middle;
 }
 
-#keyboard #menu button {
-	font-size: var(--font-size-h5);
-	width: 25%;
+#keyboard button {
+	max-width: var(--space-large);
 }
 
-#keyboard #trigonometry {
-	display: none;
+#keyboard p {
+	margin-bottom: var(--space-micro);
+}
+
+#keyboard .scrollable {
+	max-height: calc(5 * (var(--space-large) + var(--space-micro)) + 2 * var(--space-tiny));
 }
 
 #keyboard #division section {
@@ -26,7 +33,7 @@
 	flex-direction: row;
 	justify-content: flex-start;
 	min-width: var(--space-wide);
-	min-height: var(--margin-medium);
+	min-height: var(--space-big);
 	vertical-align: middle;
 }
 
@@ -35,8 +42,8 @@
 }
 
 #input-color {
-	height: var(--height-small);
-	min-width: var(--height-small);
+	height: var(--space-big);
+	min-width: var(--space-big);
 }
 
 #results {
@@ -50,25 +57,29 @@
 	vertical-align: middle;
 }
 
-#templateFunctionInput {
-	display: none;
-}
-
-@media only screen and (max-width: 900px) {
-	#keyboard button {
+@media only screen and (max-width: 800px) {
+	#keyboard, #keyboard div {
 		box-sizing: border-box;
 		width: 100%;
+		max-width: 100%;
 	}
-	#keyboard span {
-		display: block;
+	#keyboard button {
+		min-width: var(--space-medium);
+		width: 100%;
+		max-width: 100%;
+	}
+	#keyboard section:first-child {
+		box-sizing: border-box;
+		width: 60%;
+	}
+	#keyboard section:last-child {
+		box-sizing: border-box;
+		width: 40%;
 	}
 	#move {
 		bottom: initial;
 	}
-	#results {
-		display: none;
-	}
-	#settings {
+	#results, #settings {
 		display: none;
 	}
 }

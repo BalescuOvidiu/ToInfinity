@@ -22,13 +22,11 @@ header menu {
 header menu a {
 	align-items: center;
 	display: inline-flex;
-	text-decoration: none;
 	text-align: center;
 }
 
 header menu a:hover {
 	background-color: var(--color-button);
-	cursor: pointer;
 }
 
 header menu a:active {

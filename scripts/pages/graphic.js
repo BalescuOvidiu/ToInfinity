@@ -1,19 +1,18 @@
-var interval;
-
-var maxFunctionsNumber = 7;
-var functionsNumber = 0;
-var idName = 0;
-var idFormula = 0;
+var timeInterval;
 
 var firstIndex = 0;
+var lastIndex = 0;
+var indexOfSelectedInput = 0;
 
 var solveEquationModeEnabled = false;
 
-var resolutionOutput = 2;
-var resolutionInput = 0.5;
-var maxAngleDeviation = 1.222;
+var resolutionGraphicFunctions = 2;
+var resolutionSolutionsPoints = 0.5;
+var maxAngleDeviationForContinuity = 1.222;
 
-var indexOfSelectedInput = 0;
+var names = ["f", "g", "h",	"k", "j", "α", "β"];
+var idLastNameGiven = 0;
+
 var functions;
 
 function loadProgram() {
@@ -21,10 +20,12 @@ function loadProgram() {
 	loadCanvas(getWidth(), getHeight());
 
 	importCustom();
+	reloadFunctions();
 	addFunctionOnGui();
+	removeFunctionFromGui(firstIndex);
 	deactivateSolveEquation();
 
-	interval = setInterval(loop);
+	timeInterval = setInterval(loop);
 }
 
 function loop() {
@@ -47,7 +48,7 @@ function renderFunctions() {
 	var formula;
 	var color;
 
-	for(var index = firstIndex; index < functionsNumber; index++) {
+	for(var index = firstIndex; index < functions.length; index++) {
 		formula = getFormula(index);
 		color = functions[index]["input-color"].value;
 		if("" != formula) {
@@ -60,14 +61,14 @@ function renderFunctions() {
 			}
 		}
 		else {
-			updateInvalidity(index, "Scrieți funcția pentru a afișa graficul.");
+			updateInvalidity(index, "");
 		}
 	}
 }
 
 function renderFunction(formula, color) {
 	var x1 = 0;
-	var x2 = resolutionOutput;
+	var x2 = resolutionGraphicFunctions;
 	var y1;
 	var y2;
 	var y3;
@@ -83,7 +84,7 @@ function renderFunction(formula, color) {
 	context.beginPath();
 	context.moveTo(x1, y1);
 
-	for(var x3 = 2; x3 <= resolutionOutput + canvas.width; x3 += resolutionOutput) {
+	for(var x3 = 2; x3 <= resolutionGraphicFunctions + canvas.width; x3 += resolutionGraphicFunctions) {
 		continous = true;
 
 		y3 = calculateFromScreenForScreen(formula, x3);
@@ -94,7 +95,7 @@ function renderFunction(formula, color) {
 		else if(Infinity == Math.abs(yToCartezian(y1)) || Math.abs(Infinity) == yToCartezian(y2)) {
 			continous = false;
 		}
-		else if(maxAngleDeviation < getAngle3Points2dRadians(x1, y1, x2, y2, x3, y3)) {
+		else if(maxAngleDeviationForContinuity < getAngle3Points2dRadians(x1, y1, x2, y2, x3, y3)) {
 			continous = false;
 		}
 
@@ -122,71 +123,80 @@ function renderPoint(x, y, color) {
 }
 
 function addFunction(color, name, formula) {
-	if(maxFunctionsNumber > functionsNumber) {
-		previousColors = [];
+	previousColors = [];
 
-		for(var index = firstIndex; index < functionsNumber; index++) {
-			previousColors.push(functions[index]["input-color"].value);
-		}
+	for(var index = firstIndex; index < functions.length; index++) {
+		previousColors.push(functions[index]["input-color"].value);
+	}
 
-		getFunctionsTable().innerHTML += document.getElementById("templateFunctionInput").innerHTML;
-		reloadFunctions();
+	getFunctionsTable().innerHTML += getFunctionsTable().querySelector("tr").innerHTML;
+	reloadFunctions();
 
-		setColor(functionsNumber, color);
-		setName(functionsNumber, name);
-		setFormula(functionsNumber, formula);
+	updateFunctionsNumber();
+	updateOrder();
+	setColor(lastIndex, color);
+	setName(lastIndex, name);
+	setFormula(lastIndex, formula);
 
-		for(var index = firstIndex; index < functionsNumber - firstIndex; index++) {
+	if (previousColors) {
+		for(var index = firstIndex; index < lastIndex; index++) {
 			setColor(index, previousColors[index - firstIndex]);
 		}
-		updateFunctionsNumber();
-		updateOrder();
 	}
 }
 
 function addFunctionOnGui() {
-	addFunction(getNextColor(), getNextName(), getNextFormula());
+	addFunction(getNextColor(), getNextName(), "");
+}
+
+function removeFunction(index) {
+	getFunctionsTable().querySelectorAll("tr")[index].remove();
+	reloadFunctions();
+	updateFunctionsNumber();
+	updateOrder();
+
+	isAnInputSelected = false;
 }
 
 function removeFunctionFromGui(index) {
-	if(1 < functionsNumber) {
-		getFunctionsTable().querySelectorAll("tr")[index].remove();
-		reloadFunctions();
-		updateFunctionsNumber();
-		updateOrder();
-
-		isAnInputSelected = false;
+	if(1 < functions.length && index != lastIndex) {
+		removeFunction(index);
 	}
 	else {
-		functions[firstIndex]["input-formula"].innerHTML = "";
+		functions[index]["input-formula"].innerHTML = "";
 	}
 }
 
 function removeFunctionsFromGui() {
-	while(1 < functionsNumber) {
-		removeFunctionFromGui(functionsNumber - 1);
+	while(1 < functions.length) {
+		removeFunctionFromGui(lastIndex);
 	}
 }
 
 function update() {
 	updateGui();
+	if(functions[lastIndex]["input-formula"].innerHTML) {
+		addFunctionOnGui();
+	}
+	else if(indexOfSelectedInput + 1 == lastIndex) {
+		if(isFormulaEmpty(indexOfSelectedInput)) {
+			removeFunction(lastIndex);
+			functions[indexOfSelectedInput]["input-formula"].innerHTML = "";
+			getPreviousColor();
+			getPreviousName();
+		}
+	}
 }
 
 function updateOrder() {
-	for(var index = firstIndex; index < functionsNumber; index++) {
+	for(var index = firstIndex; index < functions.length; index++) {
 		functions[index]["remove"].style.order = index;
 		functions[index]["input-formula"].style.order = index;
 	}
 }
 
-function updateGui() {
-	if(canvas.width != getWidth() || canvas.height != getHeight()) {
-		loadContext(getWidth(), getHeight());
-	}
-}
-
 function updateFunctionsNumber() {
-	functionsNumber = functions.length;
+	lastIndex = functions.length - 1;
 }
 
 function updatePoint(index, formula, color) {
@@ -222,7 +232,7 @@ function updateEquation(index, formula, color) {
 
 	if(false == isNaN(y)) {
 		var y2 = [];
-		var distance = resolutionInput;
+		var distance = resolutionSolutionsPoints;
 
 		for(var x1 = 0; x1 <= canvas.width; x1++) {
 			y2.push(calculateFromScreenForScreen(formula, x1));
@@ -235,7 +245,7 @@ function updateEquation(index, formula, color) {
 
 		if(false == isNaN(x)) {
 			for(var x1 = 0; x1 <= canvas.width; x1++) {
-				if(resolutionInput >= Math.abs(y2[x] - y2[x1])) {
+				if(resolutionSolutionsPoints >= Math.abs(y2[x] - y2[x1])) {
 					renderPoint(x1, y2[x1], color);
 				}
 			}
@@ -260,67 +270,58 @@ function updateInvalidity(index, message) {
 }
 
 function getNextName() {
-	var array = [
-		"f",
-		"g",
-		"h",
-		"k",
-		"j",
-		"α",
-		"β"
-	];
+	var value = names[idLastNameGiven];
+	var idName = 1;
 
-	var value = array[idName];
-
-	if(array.length <  2 + idName) {
-		idName = 0;
+	while(isNameSelected(value)){
+		value = names[idLastNameGiven] + idName;
+		idName += 1;
 	}
-	else {
-		idName++;
-	}
+	idLastNameGiven = getIndex(names, idLastNameGiven, 1);
 
 	return value;
 }
 
-function getNextFormula() {
-	var array = [
-		"sin(x)",
-		"asin(x)",
-		"tan(x)",
-		getHtmlFraction(1, 1, "x"),
-		"[x]",
-		"{x}",
-		"x<sup>2</sup>"
-	];
-
-	var value = array[idFormula];
-
-	if(array.length < 2 + idFormula) {
-		idFormula = 0;
-	}
-	else {
-		idFormula++;
-	}
+function getPreviousName() {
+	var value = names[idLastNameGiven];
+	idLastNameGiven = getIndex(names, idLastNameGiven, -1);
 
 	return value;
 }
 
 function getFormula(index) {
-	formula = functions[index]["input-formula"].innerHTML;
-	if(formula) {
-		return fromHtmlToFormula(formula);
+	if(isFormulaEmpty(index)) {
+		return "";
 	}
-	return "";
+	return fromHtmlToFormula(functions[index]["input-formula"].innerHTML);;
 }
 
 function getFunctionsTable() {
 	return document.querySelector("#f-table");
 }
 
+function isNameSelected(name) {
+	if(functions) {
+		for(var index = firstIndex; index < functions.length; index++) {
+			if(functions[index]["input-name"].innerHTML == name) {
+				return true;
+			}
+		}		
+	}
+	return false;
+}
+
+function isFormulaEmpty(index) {
+	if(functions[index]["input-formula"].innerText.replace("\n", "")) {
+		return false;
+	}
+	return true;
+}
+
 function reloadFunctions() {
 	functions = [];
-	temp = getFunctionsTable().children;
-	for(var index = 0; index < temp.length; index++) {
+	var temp = getFunctionsTable().children;
+	for(var index = firstIndex; index < temp.length; index++) {
 		functions.push({
 			"input-color": temp[index].querySelector("#input-color"),
 			"input-formula": temp[index].querySelector("#input-formula"),
@@ -343,22 +344,12 @@ function setFormula(index, formula) {
 	functions[index]["input-formula"].innerHTML = formula;
 }
 
-function keyboardShowTrigonometric() {
-	document.querySelector("#keyboard #elementary").style.display = "none";
-	document.querySelector("#keyboard #trigonometry").style.display = "flex";
-}
-
-function keyboardShowElementary() {
-	document.querySelector("#keyboard #elementary").style.display = "flex";
-	document.querySelector("#keyboard #trigonometry").style.display = "none";
-}
-
 function insertFunction(element) {
 	insertInto(element.innerHTML + "(x)");
 }
 
 function insertInto(theHtmlCode) {
-	if(indexOfSelectedInput < functionsNumber) {
+	if(indexOfSelectedInput < functions.length) {
 		functions[indexOfSelectedInput]["input-formula"].innerHTML += theHtmlCode;
 	}
 }
@@ -408,30 +399,46 @@ function calculateFromScreenForScreen(f, x) {
 	const scope = {
 		x: xToCartezian(x)
 	}
-
-	return yToScreen(math.evaluate(f, scope));
+	try {
+		return yToScreen(math.evaluate(f, scope));
+	}
+	catch(e) {
+		return NaN;
+	}
 }
 
 function calculateFomCartezianForScreen(f, x) {
 	const scope = {
 		x: x
 	}
-
-	return yToScreen(math.evaluate(f, scope));
+	try {
+		return yToScreen(math.evaluate(f, scope));
+	}
+	catch(e) {
+		return NaN;
+	}	
 }
 
 function calculateFromScreenForCartezian(f, x) {
 	const scope = {
 		x: xToCartezian(x)
 	}
-
-	return math.evaluate(f, scope);
+	try {
+		return math.evaluate(f, scope);
+	}
+	catch(e) {
+		return NaN;
+	}
 }
 
 function calculateFomCartezianForCartezian(f, x) {
 	const scope = {
 		x: x
 	}
-
-	return math.evaluate(f, scope);
+	try {
+		return math.evaluate(f, scope);
+	}
+	catch(e) {
+		return NaN;
+	}
 }

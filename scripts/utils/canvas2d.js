@@ -54,6 +54,12 @@ function loadContext(width, height) {
 	context = canvas.getContext("2d");
 }
 
+function updateGui() {
+	if(canvas.width != getWidth() || canvas.height != getHeight()) {
+		loadContext(getWidth(), getHeight());
+	}
+}
+
 function moveLeft(distance) {
 	offsetX += distance;
 }
