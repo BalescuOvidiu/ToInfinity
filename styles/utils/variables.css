@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Arial';
+    src: url('../../fonts/Arial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('../../fonts/Verdana.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
 
 	/* Sizing variables */
@@ -33,15 +49,28 @@
 
 	/* Color variables */
 
-	--orange:    #e07440;
-	--yellow:    #d9a925;
-	--green:     #249b4e;
-	--cyan:      #13a2d6;
-	--blue:      #4493f8;
-	--purple:    #c62f94;
-	--red:       #e03921;
-	--gray:      rgb(46, 46, 46);
-	--dark-gray: rgb(32, 32, 32);
+	--orange:   #e07440;
+	--yellow:   #d9a925;
+	--green:    #249b4e;
+	--teal:     #20c997;
+	--cyan:     #57ace9;
+	--blue:     #4493f8;
+	--indigo:   #6610f2;
+	--purple:   #c62f94;
+	--pink:     #de5298;
+	--red:      #e03921;
+
+	--white:    #ffffff;
+	--gray-100: #f8f9fa;
+	--gray-200: #e9ecef;
+	--gray-300: #dee2e6;
+	--gray-400: #ced4da;
+	--gray-500: #adb5bd;
+	--gray-600: #6c757d;
+	--gray-700: #495057;
+	--gray-800: #343a40;
+	--gray-900: #212529;
+	--black:    #000000;
 
 	/*Dark theme*/
 
@@ -56,8 +85,11 @@
 	--dark-color-title:          var(--orange);
 	--dark-color-heading:        rgb(239, 239, 239);
 	--dark-color-text:           rgb(239, 239, 239);
-	--dark-color-hovered:        rgb(46, 46, 46);
-	--dark-color-active:         rgb(100, 100, 100);
+	--dark-color-hover:          rgb(46, 46, 46);
+	--dark-color-focus:          rgb(100, 100, 100);
+	--dark-color-link:           var(--dark-color-text);
+	--dark-color-link-hover:     var(--blue);
+	--dark-image-filter:         none;
 
 	/*Light theme */
 
@@ -72,8 +104,11 @@
 	--light-color-title:          var(--orange);
 	--light-color-heading:        rgb(32, 32, 32);
 	--light-color-text:           rgb(16, 16, 16);
-	--light-color-hovered:        rgb(180, 180, 180);
-	--light-color-active:         rgb(220, 220, 220);
+	--light-color-hover:          rgb(180, 180, 180);
+	--light-color-focus:          rgb(220, 220, 220);
+	--light-color-link:           var(--light-color-text);
+	--light-color-link-hover:     var(--blue);
+	--light-image-filter:         brightness(500%) contrast(10%);
 
 	/* Theme variables */
 
@@ -88,8 +123,11 @@
 	--color-title:          var(--dark-color-title);
 	--color-heading:        var(--dark-color-heading);
 	--color-text:           var(--dark-color-text);
-	--color-hovered:        var(--dark-color-hovered);
-	--color-active:         var(--dark-color-active);
+	--color-hover:          var(--dark-color-hover);
+	--color-focus:          var(--dark-color-focus);
+	--color-link:           var(--dark-color-link);
+	--color-link-hover:     var(--dark-color-link-hover);
+	--image-filter:         var(--dark-image-filter);
 
 	/* Border variables */
 

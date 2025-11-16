@@ -1,15 +1,3 @@
-p a {
-	text-decoration: underline;
-}
-
-p a:hover {
-	color: var(--blue);
-}
-
-a img:hover {
-	opacity: 0.5;
-}
-
 footer section {
 	background-color: var(--color-panel);
 	width: 100%;

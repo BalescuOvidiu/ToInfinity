@@ -57,7 +57,7 @@ canvas {
 }
 
 .panel button:hover {
-	background-color: var(--color-hovered);
+	background-color: var(--color-hover);
 	cursor: pointer;
 }
 
@@ -84,11 +84,11 @@ canvas {
 	width: var(--space-large);
 }
 
-#ms {
+#label-ms {
 	display: none;
 }
 
-#ms, #fps {
+#label-ms, #label-fps {
 	width: var(--space-wide);	
 }
 

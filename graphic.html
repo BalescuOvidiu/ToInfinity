@@ -7,7 +7,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions and geometry calculators.">
+		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions.">
+
+		<!-- ICON -->
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 		<!-- STYLES -->
 		<link rel="stylesheet" type="text/css" href="styles/utils/variables.css"/>
@@ -20,8 +23,7 @@
 		<script src="scripts/extern/math.js" defer></script>
 		<script src="scripts/utils/timing.js" defer></script>
 		<script src="scripts/utils/mathExpressions.js" defer></script>
-		<script src="scripts/utils/title.js" defer></script>
-		<script src="scripts/utils/style.js" defer></script>
+		<script src="scripts/utils/theme.js" defer></script>
 		<script src="scripts/utils/userInterface.js" defer></script>
 		<script src="scripts/utils/canvas2d.js" defer></script>
 		<script src="scripts/pages/graphic.js" defer></script>
@@ -45,8 +47,8 @@
 			onmousemove="updateMousePosition(event)" >
 			<div>
 				<button onclick="hideGui()">Ascunde interfata</button>
-				<button onclick="showFps()"id="ms"></button>
-				<button onclick="showMs()" id="fps"></button>
+				<button onclick="showFps()" id="label-ms"></button>
+				<button onclick="showMs()" id="label-fps"></button>
 				<button onclick="toggleSolveEquation()" id="solve-equation"></button>
 				<button onclick="toggleFractionMode()" id="fraction-mode"></button>
 				<button onclick="toggleTheme()" id="theme"> </button>

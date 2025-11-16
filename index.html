@@ -7,31 +7,34 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions and geometry calculators.">
+		<meta name="Description" content="To Infinity offers free graphing, for mathematical functions.">
+
+		<!-- ICON -->
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 		<!-- STYLES -->
-		<link rel = "stylesheet" href = "styles/utils/variables.css">
-		<link rel = "stylesheet" href = "styles/utils/style.css">
-		<link rel = "stylesheet" href = "styles/utils/header.css">
-		<link rel = "stylesheet" href = "styles/utils/footer.css">
-		<link rel = "stylesheet" href = "styles/pages/index.css">
+		<link rel="stylesheet" href="styles/utils/variables.css">
+		<link rel="stylesheet" href="styles/utils/style.css">
+		<link rel="stylesheet" href="styles/utils/header.css">
+		<link rel="stylesheet" href="styles/utils/footer.css">
+		<link rel="stylesheet" href="styles/pages/index.css">
 
 		<!-- SCRIPTS -->
-		<script src="scripts/utils/title.js" defer></script>
-		<script src="scripts/pages/index.js" defer></script>
-		<script src="scripts/utils/style.js" defer></script>
-		<script src="scripts/utils/message.js" defer></script>
+		<script src="scripts/utils/userInterface.js" defer></script>
+		<script src="scripts/utils/theme.js" defer></script>
+		<script src="scripts/utils/forms.js" defer></script>
 
 	</head>
-	<body onload="setTitleHome()">
+	<body onload="loadTitle()">
 
 		<!-- HEADER -->
 		<header class="container">
 
 			<!-- LOGO -->
 			<span class="container align-left">
-				<button onclick="toggleTheme()">
-					<h1 id="title"></h1>
+				<button class="logo-container" onclick="toggleTheme()">
+					<img class="logo" src="images/logo.avif" alt="Logo of website"/>
+					<label id="title"></label>
 				</button>
 			</span>
 
@@ -41,16 +44,16 @@
 					<a class="container" href="graphic.html">
 						<nav class="bordered">Grafice</nav>
 					</a>
-					<a class="container" href="graphs.html">
-						<nav class="bordered">Grafuri</nav>
+					<a class="container" href="#contact">
+						<nav class="bordered">Contact</nav>
 					</a>
 				</section>
 				<section class="container">
-					<a class="container" href="geometry.html">
-						<nav class="bordered">Geometrie</nav>
+					<a class="container" href="#despre-proiect">
+						<nav class="bordered">Despre proiect</nav>
 					</a>
-					<a class="container" href="electricity.html">
-						<nav class="bordered">Electricitate</nav>
+					<a class="container" href="#tehnologii-folosite">
+						<nav class="bordered">Tehnologii folosite</nav>
 					</a>
 				</section>
 			</menu>
@@ -59,7 +62,7 @@
 
 		<!-- MAIN -->
 		<main class="container">
-			<img src="images/graphic.avif" alt="">
+			<img class="filtered-image" src="images/imagePresentation.avif" alt="Main presentation image">
 			<div class="container-over">
 				<h1 class="text-over-image">
 					Desenator pentru grafice matematice: rapid, eficient și simplu.
@@ -75,11 +78,11 @@
 
 				<!-- CONTACT -->
 				<section class="container-padded container-half contact">
-					<h2>Contact</h2>
-					<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj aici sau la adresa de mail <a href="mailto:balescuovidiu@gmail.com" target="_blank">balescuovidiu@gmail.com</a></p>
+					<h2 id="contact">Contact</h2>
+					<p>Întâmpini probleme? Ai sugestii? Trimite un mesaj aici sau la adresa de mail <a href="mailto:balescuovidiu@gmail.com" target="_blank"><label>balescuovidiu@gmail.com</label></a></p>
 					<input type="text" id="contact-name" placeholder="Nume"/>
 					<input type="email" id="contact-email" placeholder="Email"/>
-					<textarea id="contact-message" placeholder="Un mesaj de minim 15 caractere."></textarea>
+					<textarea id="contact-message" placeholder="Un mesaj de minim 10 caractere."></textarea>
 					<div>
 						<input type="checkbox" id="contact-newsletter"/>
 						<label for="contact-newsletter">
@@ -97,26 +100,26 @@
 					<div class="bordered">
 
 						<!-- DESCRIPTION -->
-						<h2>Despre proiect</h2>
+						<h2 id="despre-proiect">Despre proiect</h2>
 						<p>Scopul platformei este de ușura procesul de învățare pentru elevi și pe profesori. În momentul actual, platforma are un desenator pentru grafice matematice.</p>
 
 						<!-- HISTORY -->
 						<h2>Istoric</h2>
-						<p>Dezvoltarea platformei a început în 2016 și în acel an a apărut prima versiune. În 2023, a fost refăcut desenatorul de grafice și s-au eliminat din dependințe, devenind mai rapid și ușor de folosit. În Aprilie 2025, a fost refăcută pagina web principală. </p>
+						<p>Dezvoltarea platformei a început în 2016 și tot atunci a apărut prima versiune. În 2023, a fost refăcut desenatorul de grafice și s-au eliminat din dependințe, devenind mai rapid și ușor de folosit. În Aprilie 2025, a fost refăcută pagina web principală. </p>
 
 						<!-- FUTURE IMPLEMENTATION -->
-						<h2>Viitoare îmbunătățiri</h2>
+						<h2>Îmbunătățiri propuse</h2>
 						<p>Codul sursă al platformei este disponibil pe platforma 
-							<a href="https://github.com/BalescuOvidiu/ToInfinity" target="_blank">GitHub</a>.</p>
+							<a href="https://github.com/BalescuOvidiu/ToInfinity" target="_blank"><label>GitHub</label></a>.</p>
 						<ol>
 							<li>
-								Finalizarea paginii pentru grafuri. Utilizatorul va putea desena grafuri folosind matricea de adiacență sau listă de muchii. Va putea să ruleze algoritmi cunoscuți: Dijkstra, Roy-Floyd, căutarea în lățime și în adâncime.
+								Crearea paginii pentru grafuri. Utilizatorul va putea desena grafuri folosind matricea de adiacență sau listă de muchii. Va putea să ruleze algoritmi cunoscuți: Dijkstra, Roy-Floyd, căutarea în lățime și în adâncime.
 							</li>
 							<li>
-								Dezvoltarea paginii pentru geometrie pentru: desenarea de forme geometrice, identificiarea acestora, calculare arie și perimetru.
+								Crearea paginii pentru geometrie pentru: desenarea de forme geometrice, identificiarea acestora, calculare arie și perimetru.
 							</li>
 							<li>
-								Dezvoltarea paginii pentru electrică, care va putea fi folosită pentru: calcule pe circuite simple și generarea de circuite cu divizori rezistivi.
+								Crearea paginii pentru electrică, care va putea fi folosită pentru: calcule pe circuite simple și generarea de circuite cu divizori rezistivi.
 							</li>
 						</ol>
 
@@ -146,7 +149,7 @@
 				<section class="container-padded used-technologies">
 
 					<!-- PROGRAMMING -->
-					<h2>Tehnologii folosite</h2>
+					<h2 id="tehnologii-folosite">Tehnologii folosite</h2>
 					<div>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
 							<img src="images/logoHtml.avif" alt="HTML" loading="lazy">
@@ -185,7 +188,7 @@
 			<!-- COPYRIGHT -->
 			<div class="container">
 				<section class="container-padded copyright">
-					<span>Copyright © 2016 - 2025 Bălescu Ovidiu-Gheorghe</span>
+					<span>Copyright © 2016 - <label id="current-year">2025</label> Bălescu Ovidiu-Gheorghe</span>
 				</section>
 			</div>
 		</footer>

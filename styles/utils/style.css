@@ -3,8 +3,14 @@
 	opacity: 1;
 }
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 a {
-	color: var(--color-text);
+	color: var(--color-link);
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -13,12 +19,13 @@ a img:hover {
 	opacity: 0.5;
 }
 
-p a {
+a label {
+	cursor: pointer;
 	text-decoration: underline;
 }
 
-p a:hover {
-	color: var(--blue);
+a:hover label {
+	color: var(--color-link-hover);
 }
 
 body {
@@ -33,7 +40,6 @@ body {
 button {
 	background-color: var(--color-button);
 	border: none;
-	box-sizing: border-box;
 	color: var(--color-text);
 	display: inline;
 	font-family: var(--font-button);
@@ -45,11 +51,11 @@ button {
 }
 
 button:active {
-	background-color: var(--color-active);
+	background-color: var(--color-focus);
 }
 
 button:hover {
-	background-color: var(--color-hovered);
+	background-color: var(--color-hover);
 	cursor: pointer;
 }
 
@@ -89,7 +95,6 @@ li {
 input, textarea {
 	background-color: rgba(0, 0, 0, 0);
 	border: var(--default-border);
-	box-sizing: border-box;
 	color: var(--color-text);
 	font-size: var(--font-size-input);
 	font-family: var(--font-input);
@@ -165,13 +170,11 @@ table {
 }
 
 .container {
-	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
 }
 
 .container-padded {
-    box-sizing: border-box;
 	display: block;
 	padding: var(--space-medium);
 }
@@ -182,7 +185,6 @@ table {
 
 .container-over {
 	align-items: center;
-	box-sizing: border-box;
 	display: flex;
 	justify-content: space-evenly;
 	position: absolute;
@@ -192,8 +194,15 @@ table {
 	width: 100%;
 }
 
-.text-over-image {
-	color: var(--dark-color-heading) !important;
+.filtered-image {
+	filter: var(--image-filter);
+}
+
+.logo-container {
+	align-items: center;
+	justify-content: left;
+	display: flex;
+	width: auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -242,5 +251,9 @@ table {
 
 	.container-over {
 		justify-content: flex-start;
+	}
+
+	.logo-container {
+		justify-content: center;
 	}
 }
