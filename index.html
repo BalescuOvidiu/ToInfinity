@@ -13,11 +13,11 @@
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 		<!-- STYLES -->
-		<link rel="stylesheet" href="styles/utils/variables.css">
-		<link rel="stylesheet" href="styles/utils/style.css">
-		<link rel="stylesheet" href="styles/utils/header.css">
-		<link rel="stylesheet" href="styles/utils/footer.css">
-		<link rel="stylesheet" href="styles/pages/index.css">
+		<link rel="stylesheet" type="text/css" href="styles/utils/variables.css" defer>
+		<link rel="stylesheet" type="text/css" href="styles/utils/style.css" defer>
+		<link rel="stylesheet" type="text/css" href="styles/utils/header.css" defer>
+		<link rel="stylesheet" type="text/css" href="styles/utils/footer.css" defer>
+		<link rel="stylesheet" type="text/css" href="styles/pages/index.css" defer>
 
 		<!-- SCRIPTS -->
 		<script src="scripts/utils/userInterface.js" defer></script>
@@ -33,7 +33,17 @@
 			<!-- LOGO -->
 			<span class="container align-left">
 				<button class="logo-container" onclick="toggleTheme()">
-					<img class="logo" src="images/logo.avif" alt="Logo of website"/>
+					<img 
+					class="logo" 
+					src="images/logo0.avif" 
+					width="32" height="32" 
+					alt="Logo of website"
+					srcset="
+						images/logo0.avif 720w,
+						images/logo1.avif 1280w,
+						images/logo2.avif 1920w,
+						images/logo3.avif 3840w,
+						images/logo4.avif 7680w"/>
 					<label id="title"></label>
 				</button>
 			</span>
@@ -62,7 +72,18 @@
 
 		<!-- MAIN -->
 		<main class="container">
-			<img class="filtered-image" src="images/imagePresentation.avif" alt="Main presentation image">
+			<img 
+			class="filtered-image" 
+			src="images/imagePresentation0.avif" 
+			fetchpriority=high 
+			width="720" height="405" 
+			alt="Main presentation image"
+			srcset="
+				images/imagePresentation0.avif 720w,
+				images/imagePresentation1.avif 1280w,
+				images/imagePresentation2.avif 1920w,
+				images/imagePresentation3.avif 3840w,
+				images/imagePresentation4.avif 7680w"/>
 			<div class="container-over">
 				<h1 class="text-over-image">
 					Desenator pentru grafice matematice: rapid, eficient și simplu.
@@ -135,10 +156,10 @@
 					<p>Această platformă a fost calificată pentru faza națională la concursurile InfoEducație și GREPIT, anul 2016.</p>
 					<div>
 						<a href="https://infoeducatie.ro/acasa" target="_blank">
-							<img src="images/logoInfoEducatie.avif" alt="GREPIT 2016" loading="lazy">
+							<img src="images/logoInfoEducatie.avif" width="32" height="32" alt="GREPIT 2016" loading="lazy">
 						</a>
 						<a href="https://grepit.info/" target="_blank">
-							<img src="images/logoGrepit.avif" alt="Info Educație 2016" loading="lazy">
+							<img src="images/logoGrepit.avif" width="32" height="32" alt="Info Educație 2016" loading="lazy">
 						</a>
 					</div>
 				</section>
@@ -152,16 +173,16 @@
 					<h2 id="tehnologii-folosite">Tehnologii folosite</h2>
 					<div>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-							<img src="images/logoHtml.avif" alt="HTML" loading="lazy">
+							<img src="images/logoHtml.avif" width="32" height="32" alt="HTML" loading="lazy">
 						</a>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-							<img src="images/logoCss.avif" alt="CSS" loading="lazy">
+							<img src="images/logoCss.avif" width="32" height="32" alt="CSS" loading="lazy">
 						</a>
 						<a href="https://javascript.info" target="_blank">
-							<img src="images/logoJavaScript.avif" alt="JavaScript" loading="lazy">
+							<img src="images/logoJavaScript.avif" width="32" height="32" alt="JavaScript" loading="lazy">
 						</a>
 						<a href="https://mathjs.org/index.html" target="_blank">
-							<img src="images/logoMathjs.avif" alt="Mathjs" loading="lazy">
+							<img src="images/logoMathjs.avif" width="32" height="96" alt="Mathjs" loading="lazy">
 						</a>
 					</div>
 
@@ -169,16 +190,16 @@
 					<h2>Software folosit</h2>
 					<div>
 						<a href="https://www.linuxmint.com/" target="_blank">
-							<img src="images/logoLinuxMint.avif" alt="Linux Mint" loading="lazy">
+							<img src="images/logoLinuxMint.avif" width="32" height="32" alt="Linux Mint" loading="lazy">
 						</a>
 						<a href="https://www.sublimetext.com/" target="_blank">
-							<img src="images/logoSublimeText.avif" alt="Sublime Text" loading="lazy">
+							<img src="images/logoSublimeText.avif" width="32" height="32" alt="Sublime Text" loading="lazy">
 						</a>
 						<a href="https://github.com/BalescuOvidiu/ToInfinity" target="_blank">
-							<img src="images/logoGitHub.avif" alt="GitHub" loading="lazy">
+							<img src="images/logoGitHub.avif" width="32" height="32" alt="GitHub" loading="lazy">
 						</a>
 						<a href="https://www.photopea.com/" target="_blank">
-							<img src="images/logoPhotopea.avif" alt="Photopea" loading="lazy">
+							<img src="images/logoPhotopea.avif" width="32" height="32" alt="Photopea" loading="lazy">
 						</a>
 					</div>
 

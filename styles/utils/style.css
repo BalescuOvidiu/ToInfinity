@@ -92,6 +92,11 @@ li {
 	margin-bottom: var(--space-small);
 }
 
+img {
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
 input, textarea {
 	background-color: rgba(0, 0, 0, 0);
 	border: var(--default-border);
